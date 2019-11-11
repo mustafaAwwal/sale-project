@@ -1,0 +1,41 @@
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 60px;
+    background-color: white;
+    z-index: 1004;
+    width: 100%;
+    border-bottom: 0.2px solid rgba(128, 128, 128, 0.459);
+}
+.divider {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.brand {
+    flex: 0 1 30%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.link-area {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+.logo-wrapper {
+    width: 60px;
+    height: 60px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.brand-name {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    .heading {
+        font-weight: 500;
+    }
+}

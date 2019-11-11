@@ -1,0 +1,17 @@
+<div class="button-wrapper">
+    <div class="action-button" *ngIf="buttons.indexOf('edit') !== -1">
+    <button mat-raised-button color="primary" (click)="editButtonHandler()" >
+        <fa-icon [icon]="iconPack.edit"></fa-icon> Edit
+    </button>
+</div>
+    <div class="action-button" *ngIf="buttons.indexOf('detail') !== -1">
+    <button mat-raised-button color="accent" (click)="detailButtonHandler()" >
+        <fa-icon [icon]="iconPack.detail"></fa-icon> Details
+    </button>
+</div>
+    <div class="action-button"  *ngIf="buttons.indexOf('delete') !== -1">
+    <button mat-raised-button color="warn" (click)="deleteButtonHandler()">
+        <fa-icon [icon]="iconPack.delete"></fa-icon> Delete
+    </button>
+</div>
+</div>

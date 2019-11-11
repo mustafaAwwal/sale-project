@@ -1,0 +1,17 @@
+.nav-link {
+    padding:20px 25px;
+    a {
+        color: black;
+        text-decoration: none;
+        display: flex;
+        .icon-wrapper {
+            width: 30px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+        }
+    }
+}
+.active {
+    font-weight: 500;
+}

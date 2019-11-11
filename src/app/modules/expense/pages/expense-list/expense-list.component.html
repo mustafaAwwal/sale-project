@@ -1,0 +1,14 @@
+<app-common-heading incomingHeading= 'Expense List'></app-common-heading>
+<div class="button-wrapper">
+    <div class="buttons">
+        <button color="primary" mat-raised-button>
+            <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Expense
+        </button>
+    </div>
+    <div class="buttons">
+        <button color="accent" mat-raised-button>
+            Today's Expense
+        </button>
+    </div>
+</div>
+<app-expense-table [incomingData]='tableData'></app-expense-table>

@@ -1,0 +1,28 @@
+<table mat-table [dataSource]='purchaseData' class="mat-elevation-z8">
+    <ng-container matColumnDef='date'>
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let row">{{row.date}}</td>
+    </ng-container>
+    <ng-container matColumnDef='billNo'>
+        <th mat-header-cell *matHeaderCellDef>Bill No</th>
+        <td mat-cell *matCellDef="let row">{{row.billNo}}</td>
+    </ng-container>
+    <ng-container matColumnDef='supplier'>
+        <th mat-header-cell *matHeaderCellDef>Supplier</th>
+        <td mat-cell *matCellDef="let row">{{row.supplier}}</td>
+    </ng-container>
+    <ng-container matColumnDef='netTotal'>
+        <th mat-header-cell *matHeaderCellDef>Net Total</th>
+        <td mat-cell *matCellDef="let row">{{row.netTotal}}</td>
+    </ng-container>
+    <ng-container matColumnDef='paid'>
+        <th mat-header-cell *matHeaderCellDef>Paid</th>
+        <td mat-cell *matCellDef="let row">{{row.paid}}</td>
+    </ng-container>
+    <ng-container matColumnDef='actions'>
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let row"><button mat-raised-button color="primary">Actions</button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef = "let row: columns: columnsToDisplay"></tr>
+</table>

@@ -1,0 +1,12 @@
+<div class="background-container">
+    <div class="login-area">
+        <h2 class="heading">
+            Admin Login
+        </h2>
+        <form [formGroup]="loginForm" action="" (ngSubmit)="login(loginForm.value)">
+            <mat-form-field><input type="text" matInput placeholder="Username"></mat-form-field>
+            <mat-form-field><input type="text" matInput placeholder="Password"></mat-form-field>
+            <div class="button-wrapper"><button color="primary" mat-raised-button type="submit">Submit</button></div>
+        </form>
+    </div>
+</div>

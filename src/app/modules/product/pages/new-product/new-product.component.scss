@@ -1,0 +1,26 @@
+
+.fields-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .field {
+        flex: 0 1 48%;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}
+.description,.stockField,.imageField {
+    flex: 0 1 100%;
+}
+.description,.stockField {
+    mat-form-field {
+        width: 100%;
+    }
+}
+.button-wrapper {
+    flex: 0 1 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}

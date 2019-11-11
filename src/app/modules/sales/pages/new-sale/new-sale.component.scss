@@ -1,0 +1,50 @@
+.heading {
+    font-weight: 300;
+}
+form {
+    display: flex;
+    flex-flow: row wrap;
+}
+.select-wrapper {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: center;
+    mat-form-field {
+        flex: 0 1 50%;
+    }
+}
+.fields-wrapper {
+    flex: 0 1 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .field {
+        flex: 1 1 auto;
+        padding: 0px 10px;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+    .plus-button-wrapper {
+        flex: 0 1 auto;
+    }
+}
+.calculation-area {
+    flex: 0 1 100%;
+    flex-flow: row nowrap;
+    display: flex;
+    justify-content: flex-end;
+    .calculation-fields {
+        flex: 0 1 auto;
+    }
+    .button-wrapper {
+        button {
+            width: 100%;
+        }
+    }
+}
+.form-wrapper {
+    background-color: white;
+    box-shadow: 0 3px 5px rgba(128, 128, 128, 0.356);
+    padding: 30px 30px;
+}

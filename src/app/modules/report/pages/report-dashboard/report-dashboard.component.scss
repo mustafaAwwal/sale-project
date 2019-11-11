@@ -1,0 +1,19 @@
+.report-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.report {
+    flex: 0 1 31%;
+    margin-bottom: 30px;
+}
+@media only screen and (max-width: 992px) {
+    .report {
+        flex: 0 1 49%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .report {
+        flex: 0 1 100%;
+    }
+}

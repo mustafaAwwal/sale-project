@@ -1,0 +1,33 @@
+.button-wrapper {
+    display: none;
+    transition: 400ms;
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    z-index: 1002;
+    button {
+        z-index: 1003;
+    }
+}
+fa-icon {
+    color: white;
+}
+@media only screen and (max-width: 992px) {
+    .button-wrapper {
+        display: initial;
+        transition: 600ms;
+        animation: fade;
+        animation-duration: 400ms;
+        button {
+            background-color: indigo;
+        }
+    }
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

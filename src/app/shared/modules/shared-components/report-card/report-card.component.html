@@ -1,0 +1,21 @@
+<div class="mat-elevation-z8 report-wrapper" [style.background-color]="reportCardData.background">
+    <div class="graphic-wrapper">
+        <div class="icon-wrapper">
+            <fa-icon [icon]='reportCardData.icon' size="6x"></fa-icon>
+        </div>
+        <div class="text-area">
+                <app-common-heading [incomingHeading]="reportCardData.heading"></app-common-heading>
+                <div class="sub-text">
+                Report
+            </div>
+        </div>
+    </div>
+    <div class="link-wrapper">
+        <div class="link">
+            <a href="">View Report</a>
+        </div>
+        <div class="arrow-wrapper">
+            <fa-icon [icon]="iconPack.arrow"></fa-icon>
+        </div>
+    </div>
+</div>

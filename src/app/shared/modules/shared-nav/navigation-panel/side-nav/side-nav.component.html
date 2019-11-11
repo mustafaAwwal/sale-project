@@ -1,0 +1,10 @@
+<div class="container" [ngClass]="visibleState ? 'show':'hidden'">
+    <div class="nav-area">
+        <div *ngFor="let route of siglePageRoutes">
+            <app-side-nav-link [routerInput]="route"></app-side-nav-link>
+        </div>
+        <div *ngFor="let routePack of routesSideNav">
+            <app-expansion [routePack]='routePack'></app-expansion>
+        </div>
+    </div>
+</div>

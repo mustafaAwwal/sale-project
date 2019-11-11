@@ -1,0 +1,30 @@
+form {
+    flex-flow: column nowrap;
+    display: flex;
+    .button-wrapper {
+        button {
+            width: 100%;
+        }
+    }
+}
+.background-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    height: 100vh;
+}
+.login-area {
+    flex: 0 1 30%;
+    padding:50px;
+    background-color: white;
+    box-shadow: 0 3px 5px gray;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.heading {
+    font-weight: 400;
+    text-align: center;
+    margin: 0px 0px;
+}

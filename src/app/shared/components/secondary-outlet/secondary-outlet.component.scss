@@ -1,0 +1,11 @@
+.wrapper {
+    padding: 60px 30px 30px 250px;
+    position: relative;
+    transition: 400ms;
+}
+@media only screen and (max-width: 992px) {
+    .wrapper {
+        padding-left: 30px;
+        transition: 400ms;
+    }
+}

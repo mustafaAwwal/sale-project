@@ -1,0 +1,13 @@
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                    <span class="icon-wrapper"><fa-icon [icon]="routePack.icon"></fa-icon></span> {{routePack.header}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="nav-link" *ngFor = "let route of routePack.routes">
+            <a [routerLink]='route.route' routerLinkActive = "active" [routerLinkActiveOptions]="{exact: true}">{{route.routeName}}</a>
+        </div>
+    </mat-expansion-panel>
+    
+</mat-accordion>

@@ -1,0 +1,18 @@
+.nav-link {
+    padding: 5px 0px;
+    a {
+        text-decoration: none;
+        color: black;
+        width: 100%;
+    }
+}
+
+.active {
+    font-weight: 500;
+}
+.icon-wrapper {
+    width: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}

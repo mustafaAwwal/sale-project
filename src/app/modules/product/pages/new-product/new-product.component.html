@@ -1,0 +1,68 @@
+<app-common-heading incomingHeading="Create New Product"></app-common-heading>
+<div class="form-wrapper">
+    <form action="">
+        <div class="fields-wrapper">
+            <div class="field">
+                <mat-form-field><input matInput placeholder="Product Name" type="text"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input matInput placeholder="Product Code" type="text"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Categories</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let cat of categories" [value]="cat.value">{{cat.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Sub Categories</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let sub of subCategories" [value]="sub.value">{{sub.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input matInput placeholder="Cost Price" type="text"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input matInput placeholder="MRP" type="text"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input matInput placeholder="Minimum Retail Price" type="text"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input matInput placeholder="Product Tax" type="text"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input matInput placeholder="Unit" type="text"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Status</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let stat of status" [value]="stat.value">{{stat.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="description">
+                <mat-form-field>
+                    <textarea  cols="30" rows="3" matInput placeholder="Description"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="stockField">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Opening Stock">
+                </mat-form-field>
+            </div>
+            <div class="imageField">
+                <input type="file">
+            </div>
+            <div class="button-wrapper">
+                <button mat-raised-button type="submit" color="primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

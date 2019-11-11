@@ -1,0 +1,85 @@
+<h1 class="heading">
+    Create New Sale
+</h1>
+<div class="form-wrapper">
+    <form [formGroup]="newSaleForm" (ngSubmit)="submitForm(newSaleForm.value)">
+        <div class="select-wrapper">
+            <mat-form-field>
+                <mat-label>Customer</mat-label>
+                <mat-select formControlName="customerType" >
+                    <mat-option *ngFor="let customer of customerTypes" [value]="customer.value">{{customer.type}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="fields-wrapper">
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Select a Product</mat-label>
+                    <mat-select formControlName="productName" >
+                        <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <input formControlName="unitPrice" type="number" matInput placeholder="Unit Price">
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <input formControlName="quantity" type="text" matInput placeholder="Quantity">
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <input formControlName="subTotal" type="text" matInput placeholder="Sub Total">
+                </mat-form-field>
+            </div>
+            <div class="field plus-button-wrapper">
+                <button mat-fab color="primary"><fa-icon [icon]="iconPack.plus"></fa-icon></button>
+            </div>
+        </div>
+        <div class="calculation-area">
+            <div class="calculation-fields">
+                <div class="cal-field">
+                    <mat-form-field>
+                        <input formControlName="total" type="number" matInput placeholder="Total (Excluding Vat)">
+                    </mat-form-field>
+                </div>
+                <div class="cal-field">
+                    <mat-form-field>
+                        <input formControlName="discount" type="number" matInput placeholder="Discount">
+                    </mat-form-field>
+                </div>
+                <div class="cal-field">
+                    <mat-form-field>
+                        <input formControlName="shippingCost" type="number" matInput placeholder="Shipping Cost">
+                    </mat-form-field>
+                </div>
+                <div class="cal-field">
+                    <mat-form-field>
+                        <input formControlName="netTotal" type="number" matInput placeholder="Net Total">
+                    </mat-form-field>
+                </div>
+                <div class="cal-field">
+                    <mat-form-field>
+                        <mat-label>Payment Method</mat-label>
+                        <mat-select formControlName="paymentMethod" >
+                            <mat-option *ngFor="let method of paymentMethods" [value]="method.type">
+                                {{method.type}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="cal-field">
+                    <mat-form-field>
+                        <input formControlName="paid" type="number" matInput placeholder="Paid">
+                    </mat-form-field>
+                </div>
+                <div class="cal-field button-wrapper">
+                    <button mat-raised-button color="primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

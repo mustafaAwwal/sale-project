@@ -1,0 +1,30 @@
+.report-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 200px;
+    padding: 30px 30px 15px 30px;
+    color: white;
+}
+.graphic-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: white;
+    .sub-text {
+        text-align: right;
+        color: white;
+    }
+}
+.link-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: white;
+    a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

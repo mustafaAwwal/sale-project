@@ -1,0 +1,69 @@
+.container {
+    width: 220px;
+    position: fixed;
+    height: 100vh;
+    border-right: 0.5px solid rgba(128, 128, 128, 0.438);
+    z-index: 1000;
+    padding-top: 62px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    .nav-area {
+        height: 100vh;
+        z-index: 1001;
+        background-color: white;
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    .show {
+        width: 100%;
+        animation-name: backgroundColorChange;
+        animation-duration: 400ms;
+        animation-fill-mode: forwards;
+        .nav-area {
+            width: 240px;
+            transition: 400ms;
+        }
+        
+    }
+    .hidden {
+        width: 0px;
+        opacity: 0;
+        padding: 0px;
+        transition: 400ms;
+        background-color: transparent;
+        animation: backgroundColorChangeReverse;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+        .nav-area {
+            width: 0px;
+            padding: 0px;
+            transition: 400ms;
+            app-expansion {
+                display: none;
+                transition: 400ms;
+            }
+        }
+        
+    }
+}
+
+@keyframes backgroundColorChange {
+    0% {}
+    50% {
+        background-color: transparent;
+    }
+    100% {
+        background-color:  rgba(0, 0, 0, 0.623); 
+    }
+}
+
+@keyframes backgroundColorChangeReverse {
+    0% {background-color: rgba(0, 0, 0, 0.623);}
+    50%{background-color: transparent}
+    100% {}
+}
