@@ -13,21 +13,28 @@ form {
         flex: 0 1 50%;
     }
 }
-.fields-wrapper {
+.array-wrapper {
     flex: 0 1 100%;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    .field {
-        flex: 1 1 auto;
-        padding: 0px 10px;
-        mat-form-field {
-            width: 100%;
+    flex-flow: column-reverse nowrap;
+    .field-wrapper {
+        flex: 0 1 auto;
+        display: flex;
+        width: 100%;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        .field {
+            flex: 1 1 auto;
+            padding: 0px 10px;
+            mat-form-field {
+                width: 100%;
+            }
+        }
+        .plus-button-wrapper {
+            flex: 0 1 auto;
         }
     }
-    .plus-button-wrapper {
-        flex: 0 1 auto;
-    }
+    
 }
 .calculation-area {
     flex: 0 1 100%;

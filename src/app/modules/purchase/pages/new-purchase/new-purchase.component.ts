@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-new-purchase',
@@ -8,8 +8,10 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./new-purchase.component.scss']
 })
 export class NewPurchaseComponent implements OnInit { 
+  productListQuantity = 0;
   iconPack = {
-    plus: faPlus
+    plus: faPlus,
+    cross: faTimes
   }
   suppliers= [
     {
@@ -51,19 +53,39 @@ export class NewPurchaseComponent implements OnInit {
   createForm() {
     this.newPurchaseForm = this.fb.group({
       supplierType: ['',[Validators.required]],
-      productName: ['',[Validators.required]],
-      unitPrice: ['',[Validators.required]],
-      quantity: ['',[Validators.required]],
-      subTotal: ['',[Validators.required]],
       total: ['',[Validators.required]],
       discount: ['',[Validators.required]],
       shippingCost: ['',[Validators.required]],
       netTotal: ['',[Validators.required]],
       paymentMethod: ['',[Validators.required]],
-      paid: ['',[Validators.required]]
+      paid: ['',[Validators.required]],
+      products: this.fb.array([
+        this.createProduct()
+      ])
     })
+  }
+  get products() {
+    return this.newPurchaseForm.get('products') as FormArray;
+  }
+  createProduct(): FormGroup {
+    return this.fb.group({
+      productName: ['',[Validators.required]],
+      unitPrice: ['',[Validators.required]],
+      quantity: ['',[Validators.required]],
+      subTotal: ['',[Validators.required]]
+    })
+  };
+  addProducts() {
+    this.products.push(
+      this.createProduct())
+    this.productListQuantity += 1;
+  }
+  deleteProduct(index) {
+    this.products.removeAt(index)
+    this.productListQuantity -= 1;
   }
   submitForm(data) {
     console.log(data)
   }
+  
 }
