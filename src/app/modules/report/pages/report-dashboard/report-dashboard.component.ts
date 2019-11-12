@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBoxes, faHandHoldingUsd, faShoppingCart, faChartPie, faTag, faTags, faIndustry, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faBoxes, faHandHoldingUsd, faShoppingCart, faChartPie, faTag, faTags, faIndustry, faChartLine, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-report-dashboard',
@@ -47,6 +47,11 @@ export class ReportDashboardComponent implements OnInit {
       icon: faChartLine,
       heading: 'Profit',
       background: '#DB3B8A'
+    },
+    {
+      icon: faRocket,
+      heading: 'Reactive Store',
+      background: 'seagreen'
     }
   ]
   constructor() { }

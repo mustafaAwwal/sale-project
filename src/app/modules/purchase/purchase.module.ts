@@ -8,6 +8,7 @@ import { MaterialModule } from 'src/app/shared/modules/material/material.module'
 import { PurchaseTableComponent } from './components/purchase-table/purchase-table.component';
 import { NewPurchaseComponent } from './pages/new-purchase/new-purchase.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedComponentsModule
   ]
 })
 export class PurchaseModule { }
