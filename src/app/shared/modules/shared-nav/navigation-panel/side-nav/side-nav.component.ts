@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBoxes, faDollarSign, faShoppingCart, faUsers, faTag, faTags, faTh, faHandHoldingUsd, faMoneyBill, faIndustry, faChartPie } from '@fortawesome/free-solid-svg-icons';
+import { faBoxes, faDollarSign, faShoppingCart, faUsers, faTag, faTags, faTh, faHandHoldingUsd, faMoneyBill, faIndustry, faChartPie, faCogs } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-side-nav',
@@ -110,6 +110,24 @@ export class SideNavComponent implements OnInit {
         {
           route: ['/','admin','people','peopleType','user'],
           routeName: 'User'
+        }
+      ]
+    },
+    {
+      header: 'Settings',
+      icon: faCogs,
+      routes: [
+        {
+          route: ['/','admin','settings','generalSettings'],
+          routeName: 'General Settings'
+        },
+        {
+          route: ['/','admin','settings','generalSettings','role'],
+          routeName: 'Roles'
+        },
+        {
+          route: ['/','admin','settings','generalSettings','vat'],
+          routeName: 'VAT'
         }
       ]
     }

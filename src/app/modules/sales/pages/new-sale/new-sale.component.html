@@ -1,6 +1,4 @@
-<h1 class="heading">
-    Create New Sale
-</h1>
+<app-common-heading incomingHeading='Create New Sale'></app-common-heading>
 <div class="form-wrapper">
     <form [formGroup]="newSaleForm" (ngSubmit)="submitForm(newSaleForm.value)">
         <div class="select-wrapper">
@@ -11,34 +9,38 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <div class="fields-wrapper">
-            <div class="field">
-                <mat-form-field>
-                    <mat-label>Select a Product</mat-label>
-                    <mat-select formControlName="productName" >
-                        <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-            <div class="field">
-                <mat-form-field>
-                    <input formControlName="unitPrice" type="number" matInput placeholder="Unit Price">
-                </mat-form-field>
-            </div>
-            <div class="field">
-                <mat-form-field>
-                    <input formControlName="quantity" type="text" matInput placeholder="Quantity">
-                </mat-form-field>
-            </div>
-            <div class="field">
-                <mat-form-field>
-                    <input formControlName="subTotal" type="text" matInput placeholder="Sub Total">
-                </mat-form-field>
-            </div>
-            <div class="field plus-button-wrapper">
-                <button mat-fab color="primary"><fa-icon [icon]="iconPack.plus"></fa-icon></button>
+        <div class='array-wrapper' formArrayName='products'>
+            <div class="fields-wrapper" *ngFor='let productSaleForm of newSaleForm.get("products").controls;let i=index' [formGroupName]='i'>
+                <div class="field">
+                    <mat-form-field>
+                        <mat-label>Select a Product</mat-label>
+                        <mat-select formControlName="productName" >
+                            <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field>
+                        <input formControlName="unitPrice" type="number" matInput placeholder="Unit Price">
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field>
+                        <input formControlName="quantity" type="text" matInput placeholder="Quantity">
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field>
+                        <input formControlName="subTotal" type="text" matInput placeholder="Sub Total">
+                    </mat-form-field>
+                </div>
+                <div class="field plus-button-wrapper">
+                    <button *ngIf="i == productListLength" mat-fab color="primary" type='button' (click)='addProduct()'><fa-icon [icon]="iconPack.plus"></fa-icon></button>
+                    <button *ngIf="i != productListLength" mat-fab color="warn" type='button' (click)='deleteProduct(i)'><fa-icon [icon]="iconPack.cross"></fa-icon></button>
+                </div>
             </div>
         </div>
+        
         <div class="calculation-area">
             <div class="calculation-fields">
                 <div class="cal-field">

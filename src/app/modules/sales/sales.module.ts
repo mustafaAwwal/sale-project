@@ -8,6 +8,7 @@ import { TableComponent } from './components/table/table.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewSaleComponent } from './pages/new-sale/new-sale.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule.forChild(SalesRoutes),
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedComponentsModule
   ]
 })
 export class SalesModule { }

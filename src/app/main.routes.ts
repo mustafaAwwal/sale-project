@@ -57,6 +57,10 @@ export const MainRoutes: Routes = [
             {
                 path: 'report',
                 loadChildren: './modules/report/report.module#ReportModule'
+            },
+            {
+                path: 'settings',
+                loadChildren: './modules/settings/settings.module#SettingsModule'
             }
         ]
     }

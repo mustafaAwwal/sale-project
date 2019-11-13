@@ -1,0 +1,87 @@
+<app-common-heading incomingHeading='General Settings'></app-common-heading>
+<div class="form-wrapper">
+    <form action="">
+        <div class="flex-container">
+            <app-form-heading class="heading" incomingHeading = 'General Settings'></app-form-heading>
+            <div class="field">
+                <mat-form-field><input type="text" matInput placeholder="Shop Name"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input type="text" matInput placeholder="Slogan"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input type="text" matInput placeholder="Phone"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input type="email" matInput placeholder="Email"></mat-form-field>
+            </div>
+            <div class="text-area">
+                <mat-form-field><textarea placeholder='Shop Address' name="" matInput id="" cols="30" rows="3"></textarea></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input type="text" matInput placeholder="Owner Name"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field><input type="text" matInput placeholder="Currency Rs."></mat-form-field>
+            </div>
+            <div class="file-input">
+                <input type="file">
+            </div>
+            <app-form-heading class="heading" incomingHeading='Product Settings'></app-form-heading>
+            <div class="field">
+                <mat-form-field><input type="number" matInput placeholder="Product Alert Quantity"></mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Product Tax</mat-label>
+                    <mat-select>
+                    <mat-option *ngFor="let option of taxOption" [value]="option.value">
+                        {{option.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <app-form-heading class="heading" incomingHeading='Sales and Purchase Settings'></app-form-heading>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Invoice Vat</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor='let option of invoiceVatOptions' [value]='option.value'>{{option.viewValue}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Invoice Vat Rate</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor='let option of vatRateOptions' [value]='option.value'>{{option.viewValue}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Enable/Disable Supplier</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor='let option of supplierStatusOption' [value]='option.value'>{{option.viewValue}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="field">
+                <mat-form-field>
+                    <mat-label>Enable/Disable Customer</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor='let option of customerStatusOption' [value]='option.value'>{{option.viewValue}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <app-form-heading class='heading' incomingHeading='Invoice Settings'></app-form-heading>
+            <div class="field">
+                <mat-form-field><input type="number" matInput placeholder="Vat No"></mat-form-field>
+            </div>
+            <app-form-heading class="heading" incomingHeading='POS Heading'></app-form-heading>
+            <div class="button-wrapper">
+                <button color='primary' mat-raised-button type='submit'>Save</button>
+            </div>
+        </div>
+    </form>
+</div>

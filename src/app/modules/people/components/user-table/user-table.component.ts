@@ -18,7 +18,6 @@ export class UserTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.incomingData)
-    console.log(this.dataSource.data)
   }
   editHandler(row) {
 
