@@ -1,3 +1,7 @@
-<app-common-heading incomingHeading='Product List'></app-common-heading>
-<app-create-button incomingText="Create New Product" incomingRoute="newProduct"></app-create-button>
+<h1 class="main-heading">Product List</h1>
+<div class="main-button-wrapper">
+        <div class="buttons">
+            <button mat-raised-button color="primary"> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Product</button>
+        </div>
+    </div>
 <app-product-table></app-product-table>

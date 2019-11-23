@@ -1,3 +1,5 @@
-<app-common-heading incomingHeading="Branch"></app-common-heading>
-<app-create-button incomingText="Create New Branch"></app-create-button>
+<h1 class="main-heading">Branch</h1>
+<div class="main-button-wrapper">
+    <div class="buttons"><button mat-raised-button color="primary"> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Branch</button></div>
+</div>
 <app-branch-table [incomingData]="tableData"></app-branch-table>

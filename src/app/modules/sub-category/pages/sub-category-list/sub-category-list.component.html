@@ -1,3 +1,7 @@
-<app-common-heading incomingHeading="Sub-Category"></app-common-heading>
-<div class="button-wrapper"><button mat-raised-button color="primary"> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Summary</button></div>
+<h1 class="main-heading">Sub-Category</h1>
+<div class="main-button-wrapper">
+    <div class="buttons">
+        <button mat-raised-button color="primary"> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Summary</button>
+    </div>
+</div>
 <app-sub-category-table [incomingData]="tableData"></app-sub-category-table>

@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormHeadingComponent } from './components/form-heading/form-heading.component';
 import { VatTableComponent } from './components/vat-table/vat-table.component';
 import { RoleTableComponent } from './components/role-table/role-table.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -22,7 +23,8 @@ import { RoleTableComponent } from './components/role-table/role-table.component
     MaterialModule,
     SharedComponentsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ]
 })
 export class SettingsModule { }

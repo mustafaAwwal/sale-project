@@ -1,3 +1,7 @@
-<app-common-heading incomingHeading='Invoice Vat Rate'></app-common-heading>
-<app-create-button incomingText='Add Vat Rate'></app-create-button>
+<h1 class="main-heading">Invoice Vat Rate</h1>
+<div class="main-button-wrapper">
+    <div class="buttons">
+            <button mat-raised-button color="primary" type="button"> <fa-icon [icon]="iconPack.plus" ></fa-icon>Add Vat Rate</button>
+    </div>
+</div>
 <app-vat-table [incomingData] = 'tableData'></app-vat-table>

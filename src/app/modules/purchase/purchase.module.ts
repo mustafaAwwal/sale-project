@@ -9,11 +9,12 @@ import { PurchaseTableComponent } from './components/purchase-table/purchase-tab
 import { NewPurchaseComponent } from './pages/new-purchase/new-purchase.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
+import { SinglePurchaseFormComponent } from './components/single-purchase-form/single-purchase-form.component';
 
 
 
 @NgModule({
-  declarations: [PurchaseListComponent, PurchaseTableComponent, NewPurchaseComponent],
+  declarations: [PurchaseListComponent, PurchaseTableComponent, NewPurchaseComponent, SinglePurchaseFormComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(PurchaseRoutes),

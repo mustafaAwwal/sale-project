@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateButtonComponent } from './create-button.component';
+import { SinglePurchaseFormComponent } from './single-purchase-form.component';
 
-describe('CreateButtonComponent', () => {
-  let component: CreateButtonComponent;
-  let fixture: ComponentFixture<CreateButtonComponent>;
+describe('SinglePurchaseFormComponent', () => {
+  let component: SinglePurchaseFormComponent;
+  let fixture: ComponentFixture<SinglePurchaseFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateButtonComponent ]
+      declarations: [ SinglePurchaseFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateButtonComponent);
+    fixture = TestBed.createComponent(SinglePurchaseFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

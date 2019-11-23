@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-branch-list',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./branch-list.component.scss']
 })
 export class BranchListComponent implements OnInit {
+  iconPack = {
+    plus: faPlus
+  }
   tableData = [
     {
       id: '1',

@@ -60,7 +60,6 @@ export class NewPurchaseComponent implements OnInit {
       paymentMethod: ['',[Validators.required]],
       paid: ['',[Validators.required]],
       products: this.fb.array([
-        this.createProduct()
       ])
     })
   }
@@ -87,5 +86,11 @@ export class NewPurchaseComponent implements OnInit {
   submitForm(data) {
     console.log(data)
   }
-  
+  addSingleProduct(data) {
+    console.log(data)
+    let group: FormGroup  = this.createProduct()
+    group.patchValue(data)
+    this.products.push(group)
+  }
 }
+

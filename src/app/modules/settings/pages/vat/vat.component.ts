@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-vat',
@@ -20,6 +21,9 @@ export class VatComponent implements OnInit {
       rate: '0'
     }
   ]
+  iconPack = {
+    plus: faPlus
+  }
   constructor() { }
 
   ngOnInit() {

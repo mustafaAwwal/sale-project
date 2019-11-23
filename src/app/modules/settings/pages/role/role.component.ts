@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-role',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./role.component.scss']
 })
 export class RoleComponent implements OnInit {
-
+  iconPack = {
+    plus: faPlus
+  }
   constructor() { }
 
   ngOnInit() {

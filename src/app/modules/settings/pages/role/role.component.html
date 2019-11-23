@@ -1,3 +1,7 @@
-<app-common-heading incomingHeading='Role Index'></app-common-heading>
-<app-create-button incomingText='Create New Role'></app-create-button>
+<h1 class="main-heading">Role Index</h1>
+<div class="main-button-wrapper">
+    <div class="buttons">
+            <button mat-raised-button color="primary" type="button"> <fa-icon [icon]="iconPack.plus" ></fa-icon> Create New Role</button>
+    </div>
+</div>
 <app-role-table></app-role-table>

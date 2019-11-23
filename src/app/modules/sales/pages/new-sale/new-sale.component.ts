@@ -57,7 +57,6 @@ export class NewSaleComponent implements OnInit {
       paymentMethod: ['',[Validators.required]],
       paid: ['',[Validators.required]],
       products: this.fb.array([
-        this.createProduct()
       ])
     })
   }
@@ -82,5 +81,10 @@ export class NewSaleComponent implements OnInit {
   }
   submitForm(data) {
     console.log(data)
+  }
+  addSingleProduct(data){
+    let group:FormGroup = this.createProduct();
+    group.patchValue(data)
+    this.products.push(group)
   }
 }

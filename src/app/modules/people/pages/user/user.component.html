@@ -1,3 +1,10 @@
-<app-common-heading incomingHeading="User List"></app-common-heading>
-<app-create-button incomingText="Create New User" (createHandler)="createHandlerFunction()"></app-create-button>
+<h1 class="main-heading">User List</h1>
+<div class="main-button-wrapper">
+    <div class="buttons">
+            <button mat-raised-button color="primary" type="button"> <fa-icon [icon]="iconPack.plus" ></fa-icon> Create New User</button>
+    </div>
+    <div class="buttons">
+            <button mat-raised-button color="warn" type="button">Summary</button>
+    </div>
+</div>
 <app-user-table [incomingData]="tableData"></app-user-table>

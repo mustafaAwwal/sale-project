@@ -1,0 +1,31 @@
+<form [formGroup]='singlePurchaseForm' (ngSubmit)='addProduct(singlePurchaseForm.value)'>
+    <div class="field-wrapper">
+        <div class="field" >
+            <mat-form-field>
+                <mat-label>Select a Product</mat-label>
+                <mat-select formControlName="productName" >
+                    <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="field">
+            <mat-form-field>
+                <input formControlName="unitPrice" type="number" matInput placeholder="Unit Price">
+            </mat-form-field>
+        </div>
+        <div class="field">
+            <mat-form-field>
+                <input formControlName="quantity" type="number" matInput placeholder="Quantity">
+            </mat-form-field>
+        </div>
+        <div class="field">
+            <mat-form-field>
+                <input formControlName="subTotal" type="number" matInput placeholder="Sub Total">
+            </mat-form-field>
+        </div>
+        <div class="field plus-button-wrapper">
+            <button mat-fab color="primary" type="submit" ><fa-icon [icon]="iconPack.plus"></fa-icon></button>
+
+        </div>
+    </div>
+</form>

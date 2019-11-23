@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommonHeadingComponent } from './common-heading.component';
+import { SaleFormSingleComponent } from './sale-form-single.component';
 
-describe('CommonHeadingComponent', () => {
-  let component: CommonHeadingComponent;
-  let fixture: ComponentFixture<CommonHeadingComponent>;
+describe('SaleFormSingleComponent', () => {
+  let component: SaleFormSingleComponent;
+  let fixture: ComponentFixture<SaleFormSingleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommonHeadingComponent ]
+      declarations: [ SaleFormSingleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommonHeadingComponent);
+    fixture = TestBed.createComponent(SaleFormSingleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

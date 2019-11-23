@@ -1,4 +1,4 @@
-<app-common-heading incomingHeading='Create New Sale'></app-common-heading>
+<h1 class="main-heading">Create New Sale</h1>
 <div class="form-wrapper">
     <form [formGroup]="newSaleForm" (ngSubmit)="submitForm(newSaleForm.value)">
         <div class="select-wrapper">
@@ -8,6 +8,9 @@
                     <mat-option *ngFor="let customer of customerTypes" [value]="customer.value">{{customer.type}}</mat-option>
                 </mat-select>
             </mat-form-field>
+        </div>
+        <div class="single-form-wrapper">
+            <app-sale-form-single [productList]='productList' (singleFormOutput)='addSingleProduct($event)'></app-sale-form-single>
         </div>
         <div class='array-wrapper' formArrayName='products'>
             <div class="fields-wrapper" *ngFor='let productSaleForm of newSaleForm.get("products").controls;let i=index' [formGroupName]='i'>
@@ -35,8 +38,7 @@
                     </mat-form-field>
                 </div>
                 <div class="field plus-button-wrapper">
-                    <button *ngIf="i == productListLength" mat-fab color="primary" type='button' (click)='addProduct()'><fa-icon [icon]="iconPack.plus"></fa-icon></button>
-                    <button *ngIf="i != productListLength" mat-fab color="warn" type='button' (click)='deleteProduct(i)'><fa-icon [icon]="iconPack.cross"></fa-icon></button>
+                    <button mat-fab color="warn" type='button' (click)='deleteProduct(i)'><fa-icon [icon]="iconPack.cross"></fa-icon></button>
                 </div>
             </div>
         </div>

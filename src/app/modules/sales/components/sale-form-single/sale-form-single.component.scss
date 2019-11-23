@@ -1,0 +1,15 @@
+.fields-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .field {
+        flex: 1 1 auto;
+        padding: 0px 10px;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+    .plus-button-wrapper {
+        flex: 0 1 auto;
+    }
+}

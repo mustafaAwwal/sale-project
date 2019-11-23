@@ -1,3 +1,10 @@
-<app-common-heading incomingHeading="Supplier List"></app-common-heading>
-<app-create-button incomingText="Create New Supplier" (createHandler)="createHandlerFunction()"></app-create-button>
+<h1 class="main-heading">Supplier List</h1>
+<div class="main-button-wrapper">
+    <div class="buttons">
+            <button mat-raised-button color="primary" type="button"> <fa-icon [icon]="iconPack.plus" ></fa-icon> Create New Supplier</button>
+    </div>
+    <div class="buttons">
+            <button mat-raised-button color="warn" type="button">Summary</button>
+    </div>
+</div>
 <app-supplier-table [incomingData]="tableData"></app-supplier-table>

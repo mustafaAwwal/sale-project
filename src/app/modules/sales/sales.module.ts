@@ -9,11 +9,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewSaleComponent } from './pages/new-sale/new-sale.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
+import { SaleFormSingleComponent } from './components/sale-form-single/sale-form-single.component';
 
 
 
 @NgModule({
-  declarations: [SalesListComponent, TableComponent, NewSaleComponent],
+  declarations: [SalesListComponent, TableComponent, NewSaleComponent, SaleFormSingleComponent],
   imports: [
     CommonModule,
     MaterialModule,

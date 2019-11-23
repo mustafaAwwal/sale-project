@@ -1,3 +1,10 @@
-<app-common-heading incomingHeading="Customer List"></app-common-heading>
-<app-create-button incomingText="Create New Customer" (createHandler)="createHandlerFunction()"></app-create-button>
+<h1 class="main-heading">Customer List</h1>
+<div class="main-button-wrapper">
+        <div class="buttons">
+                <button mat-raised-button color="primary" type="button"> <fa-icon [icon]="iconPack.plus" ></fa-icon> Create New Customer</button>
+        </div>
+        <div class="buttons">
+                <button mat-raised-button color="warn" type="button">Summary</button>
+        </div>
+</div>
 <app-customer-table [incomingData]="tableData"></app-customer-table>
