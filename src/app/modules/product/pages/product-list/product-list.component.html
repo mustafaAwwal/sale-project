@@ -1,7 +1,7 @@
 <h1 class="main-heading">Product List</h1>
 <div class="main-button-wrapper">
         <div class="buttons">
-            <button mat-raised-button color="primary"> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Product</button>
+            <button mat-raised-button color="primary" [routerLink]='["newProduct"]'> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Product</button>
         </div>
     </div>
 <app-product-table></app-product-table>
