@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0px 30px;
+    width: 100% !important;
+}
+form {
+    mat-form-field {
+        width: 100%;
+    }
+}
+.item-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .item {
+        flex: 0 1 32%;
+    }
+}

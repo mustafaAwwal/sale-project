@@ -10,10 +10,16 @@ export const MainRoutes: Routes = [
         path: 'auth',
         loadChildren: './modules/auth/auth.module#AuthModule'
     },
+    
     {
         path: 'admin',
         component: SecondaryOutletComponent,
         children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'dashboard'
+            },
             {
                 path: 'sales',
                 loadChildren: './modules/sales/sales.module#SalesModule',
@@ -61,6 +67,10 @@ export const MainRoutes: Routes = [
             {
                 path: 'settings',
                 loadChildren: './modules/settings/settings.module#SettingsModule'
+            },
+            {
+                path: 'pos',
+                loadChildren: './modules/pos/pos.module#PosModule'
             }
         ]
     }

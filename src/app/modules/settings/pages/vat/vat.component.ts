@@ -6,7 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vat.component.scss']
 })
 export class VatComponent implements OnInit {
-
+  tableData = [
+    {
+      id: '1',
+      name: 'No Tax',
+      type: 'percentage',
+      rate: '0'
+    },
+    {
+      id: '2',
+      name: 'Zero Percent(0%)',
+      type: 'percentage',
+      rate: '0'
+    }
+  ]
   constructor() { }
 
   ngOnInit() {

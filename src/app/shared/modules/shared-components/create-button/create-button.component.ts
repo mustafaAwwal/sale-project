@@ -9,6 +9,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class CreateButtonComponent implements OnInit {
   @Input() incomingText: any;
   @Output() createHandler = new EventEmitter<boolean>();
+  @Input() incomingRoute: any;
   buttonText: any;
   iconPack = {
     plus: faPlus
@@ -18,7 +19,5 @@ export class CreateButtonComponent implements OnInit {
   ngOnInit() {
     this.buttonText = this.incomingText;
   }
-  createHandlerFunction() {
-    this.createHandler.emit(true)
-  }
+
 }

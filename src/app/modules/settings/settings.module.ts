@@ -9,11 +9,13 @@ import { MaterialModule } from 'src/app/shared/modules/material/material.module'
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormHeadingComponent } from './components/form-heading/form-heading.component';
+import { VatTableComponent } from './components/vat-table/vat-table.component';
+import { RoleTableComponent } from './components/role-table/role-table.component';
 
 
 
 @NgModule({
-  declarations: [GeneralSettingsComponent, RoleComponent, VatComponent, FormHeadingComponent],
+  declarations: [GeneralSettingsComponent, RoleComponent, VatComponent, FormHeadingComponent, VatTableComponent, RoleTableComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(SettingsRoutes),

@@ -12,8 +12,75 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$sale-project-primary: mat-palette($mat-indigo);
-$sale-project-accent: mat-palette($mat-pink, A200, A100, A400);
+$md-mcgpalette0: (
+    50 : #e7f3fb,
+    100 : #c2e0f4,
+    200 : #9acced,
+    300 : #71b7e6,
+    400 : #52a7e0,
+    500 : #3498db,
+    600 : #2f90d7,
+    700 : #2785d2,
+    800 : #217bcd,
+    900 : #156ac4,
+    A100 : #f5f9ff,
+    A200 : #c2ddff,
+    A400 : #8fc1ff,
+    A700 : #75b3ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-mcgpalette1: (
+    50 : #fef0e9,
+    100 : #fcd9c7,
+    200 : #fac0a2,
+    300 : #f7a77d,
+    400 : #f69461,
+    500 : #f48145,
+    600 : #f3793e,
+    700 : #f16e36,
+    800 : #ef642e,
+    900 : #ec511f,
+    A100 : #ffffff,
+    A200 : #fff2ef,
+    A400 : #ffcbbc,
+    A700 : #ffb7a2,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$sale-project-primary: mat-palette($md-mcgpalette0);
+$sale-project-accent: mat-palette($md-mcgpalette1);
 
 // The warn palette is optional (defaults to red).
 $sale-project-warn: mat-palette($mat-red);

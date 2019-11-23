@@ -5,6 +5,7 @@ import { CreateButtonComponent } from './create-button/create-button.component';
 import { MatButtonModule } from '@angular/material';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TableActionComponent } from './table-action/table-action.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,13 +14,14 @@ import { TableActionComponent } from './table-action/table-action.component';
   imports: [
     CommonModule,
     MatButtonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule
   ],
  
   exports: [
     CommonHeadingComponent,
     CreateButtonComponent,
-    TableActionComponent
+    TableActionComponent,
   ]
 })
 export class SharedComponentsModule { }

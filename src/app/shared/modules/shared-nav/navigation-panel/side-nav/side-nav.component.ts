@@ -78,6 +78,10 @@ export class SideNavComponent implements OnInit {
         {
           route: ['/','admin','sales','salesList','newSale'],
           routeName: 'Create New Sale'
+        },
+        {
+          route: ['/','admin','pos','screen'],
+          routeName: 'POS Screen'
         }
       ]
     },

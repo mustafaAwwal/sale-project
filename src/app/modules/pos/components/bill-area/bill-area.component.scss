@@ -1,0 +1,65 @@
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    hr {
+        margin: 0px;
+    }
+}
+.field-wrapper-button {
+    display: flex;
+    flex-flow: row nowrap;
+    mat-form-field {
+        flex: 1 1 auto;
+    }
+    .button-wrapper {
+        flex: 0 1 10%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+}
+.field-wrapper {
+    mat-form-field {
+        width: 100%;
+    }
+}
+.table-wrapper {
+    height: 350px;
+    overflow: scroll;
+    input[type='text'],input[type='number'] {
+        border: 0px;
+        outline: 0px;
+        width: 100% !important;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        th,td{
+            border-bottom: 1px solid grey;
+            padding: 10px 0px
+        }
+        th {
+            font-weight: 500;
+        }
+    }
+}
+.total-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    .total-field {
+        flex: 0 1 50%;
+        padding: 0px 10px;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}
+.button-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    .button {
+        padding-left: 10px;
+    }
+}

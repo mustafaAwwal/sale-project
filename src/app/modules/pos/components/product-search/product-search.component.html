@@ -1,0 +1,17 @@
+<div class="flex-container">
+    <form action="">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Search">
+        </mat-form-field>
+    </form>
+    <mat-tab-group>
+        <mat-tab *ngFor='let itemPack of itemSearch' [label]="itemPack.itemCategory">
+            <div class="item-flex">
+                <div class="item" *ngFor='let item of itemPack.items'>
+                    <app-item-card [itemPack]='item'></app-item-card>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    
+</div>

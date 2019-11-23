@@ -3,10 +3,10 @@
     top: 0px;
     left: 0px;
     height: 60px;
-    background-color: white;
+    background-color: #3498db;
     z-index: 1004;
     width: 100%;
-    border-bottom: 0.2px solid rgba(128, 128, 128, 0.459);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.459);
 }
 .divider {
     display: flex;
@@ -16,6 +16,8 @@
     flex: 0 1 30%;
     display: flex;
     flex-flow: row nowrap;
+    color: white;
+    cursor: pointer;
 }
 .link-area {
     flex: 1 1 auto;

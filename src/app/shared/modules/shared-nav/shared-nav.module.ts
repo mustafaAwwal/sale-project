@@ -28,7 +28,8 @@ import { SideNavLinkComponent } from './navigation-panel/side-nav-link/side-nav-
     ParentNavComponent,
     SideNavComponent,
     ExpansionComponent,
-    SideNavLinkComponent
+    SideNavLinkComponent,
+    HeaderComponent
   ]
 })
 export class SharedNavModule { }
