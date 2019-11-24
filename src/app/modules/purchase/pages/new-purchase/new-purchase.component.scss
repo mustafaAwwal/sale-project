@@ -13,14 +13,13 @@ form {
 .single-purchase-form {
     flex: 0 1 100%;
 }
-.array-wrapper {
+.array-wrapper  {
     flex: 0 1 100%;
     display: flex;
     flex-flow: column-reverse nowrap;
-    .field-wrapper {
+    .fields-wrapper {
         flex: 0 1 auto;
         display: flex;
-        width: 100%;
         flex-flow: row nowrap;
         justify-content: space-between;
         .field {
@@ -34,7 +33,7 @@ form {
             flex: 0 1 auto;
         }
     }
-    
+
 }
 .calculation-area {
     flex: 0 1 100%;

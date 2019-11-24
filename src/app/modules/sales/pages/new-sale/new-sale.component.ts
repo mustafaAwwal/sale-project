@@ -73,9 +73,7 @@ export class NewSaleComponent implements OnInit {
   get products() {
     return this.newSaleForm.get('products') as FormArray
   }
-  addProduct() {
-    this.products.push(this.createProduct())
-  }
+  
   deleteProduct(index) {
     this.products.removeAt(index)
   }

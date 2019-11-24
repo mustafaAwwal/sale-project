@@ -5,45 +5,44 @@
             <mat-form-field>
                 <mat-label>Supplier</mat-label>
                 <mat-select formControlName="supplierType" >
-                    <mat-option *ngFor="let supplier of suppliers" [value]="supplier.name">{{supplier.name}}</mat-option>
+                    <mat-option *ngFor="let supplier of suppliers" [value]="supplier.value">{{supplier.type}}</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="single-purchase-form">
-            <app-single-purchase-form [productList]='productList' (singlePurchaseOutput)='addSingleProduct($event)'></app-single-purchase-form>
+            <app-single-purchase-form [productList]='productList' (singleFormOutput)='addSingleProduct($event)'></app-single-purchase-form>
         </div>
-        <div class="array-wrapper" formArrayName='products'>
-            <div class="field-wrapper" *ngFor="let productFormControl of newPurchaseForm.get('products').controls;let i = index" [formGroupName]='i' >
-                <div class="field" >
+        <div class='array-wrapper' formArrayName='products'>
+            <div class="fields-wrapper" *ngFor='let productPurchaseForm of newPurchaseForm.get("products").controls;let i=index' [formGroupName]='i'>
+                <div class="field">
                     <mat-form-field>
                         <mat-label>Select a Product</mat-label>
-                        <mat-select formControlName="productName" >
+                        <mat-select formControlName="productName" (selectionChange)='updateFormProduct($event,i)'>
                             <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="field">
                     <mat-form-field>
-                        <input formControlName="unitPrice" type="number" matInput placeholder="Unit Price">
+                        <input formControlName="unitPrice" type="number" readonly matInput placeholder="Unit Price" #unitPrice>
                     </mat-form-field>
                 </div>
                 <div class="field">
                     <mat-form-field>
-                        <input formControlName="quantity" type="number" matInput placeholder="Quantity">
+                        <input formControlName="quantity" (change)='quantityChange(i)' type="number" matInput placeholder="Quantity" #quantity>
                     </mat-form-field>
                 </div>
                 <div class="field">
                     <mat-form-field>
-                        <input formControlName="subTotal" type="number" matInput placeholder="Sub Total">
+                        <input formControlName="subTotal" type="number" readonly matInput placeholder="Sub Total" >
                     </mat-form-field>
                 </div>
                 <div class="field plus-button-wrapper">
-                    <button mat-fab color="warn" type="button" (click)='deleteProduct(i)'><fa-icon [icon]="iconPack.cross"></fa-icon></button>
-
+                    <button mat-fab color="warn" type='button' (click)='deleteProduct(i)'><fa-icon [icon]="iconPack.cross"></fa-icon></button>
                 </div>
             </div>
-            
         </div>
+        
         <div class="calculation-area">
             <div class="calculation-fields">
                 <div class="cal-field">

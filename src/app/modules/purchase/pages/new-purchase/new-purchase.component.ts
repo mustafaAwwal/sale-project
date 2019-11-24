@@ -25,12 +25,14 @@ export class NewPurchaseComponent implements OnInit {
     {
       name: 'Pepsi',
       value: 'ppi',
-      code: 33301
+      code: 33301,
+      unitPrice: '300'
     },
     {
       name: 'pizza',
       value: 'pza',
-      code: 33302
+      code: 33302,
+      unitPrice: '3000'
     }
   ]
   paymentMethods = [
@@ -74,23 +76,49 @@ export class NewPurchaseComponent implements OnInit {
       subTotal: ['',[Validators.required]]
     })
   };
-  addProducts() {
-    this.products.push(
-      this.createProduct())
-    this.productListQuantity += 1;
-  }
+  
   deleteProduct(index) {
     this.products.removeAt(index)
-    this.productListQuantity -= 1;
   }
   submitForm(data) {
     console.log(data)
   }
-  addSingleProduct(data) {
-    console.log(data)
-    let group: FormGroup  = this.createProduct()
+  addSingleProduct(data){
+    let group:FormGroup = this.createProduct();
     group.patchValue(data)
-    this.products.push(group)
+    this.products.push(group);
+    this.calculatingNetValue()
+  }
+  calculatingNetValue() {
+    const rawValue = this.products.getRawValue()
+    let netTotal = 0;
+    for(let entry of rawValue){
+      netTotal +=entry.subTotal;
+    }
+    this.newPurchaseForm.patchValue({
+      netTotal: netTotal
+    })
+  }
+  updateFormProduct(data,index) {
+    let product = this.productList.find(x => x.value==data.value)
+    // this.saleSingleForm.patchValue({
+    //   unitPrice: product.unitPrice,
+    //   subTotal: product.unitPrice*this.quantity
+    // })
+    this.products.controls[index].patchValue({
+      unitPrice: product.unitPrice
+    })
+    this.quantityChange(index)
+  }
+  quantityChange(index){
+    let currentGroup = this.products.controls[index] as FormGroup;
+    const unitPrice  = currentGroup.controls['unitPrice'].value
+    const quantity   = currentGroup.controls['quantity'].value
+    const subTotal   = unitPrice*quantity
+    currentGroup.patchValue({
+      subTotal: subTotal
+    })
+    this.calculatingNetValue()
   }
 }
 

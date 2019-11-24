@@ -1,31 +1,30 @@
 <form [formGroup]='singlePurchaseForm' (ngSubmit)='addProduct(singlePurchaseForm.value)'>
-    <div class="field-wrapper">
-        <div class="field" >
+    <div class="field-wrapper" >
+        <div class="field">
             <mat-form-field>
                 <mat-label>Select a Product</mat-label>
-                <mat-select formControlName="productName" >
+                <mat-select formControlName='productName' (selectionChange)='updateFormProduct($event)'>
                     <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="field">
             <mat-form-field>
-                <input formControlName="unitPrice" type="number" matInput placeholder="Unit Price">
+                <input formControlName='unitPrice' type="number" matInput placeholder="Unit Price" readonly>
             </mat-form-field>
         </div>
         <div class="field">
             <mat-form-field>
-                <input formControlName="quantity" type="number" matInput placeholder="Quantity">
+                <input formControlName='quantity' type="number" (change)='quantityChange($event)' matInput placeholder="Quantity">
             </mat-form-field>
         </div>
         <div class="field">
             <mat-form-field>
-                <input formControlName="subTotal" type="number" matInput placeholder="Sub Total">
+                <input formControlName='subTotal' type="number" matInput placeholder="Sub Total" readonly>
             </mat-form-field>
         </div>
         <div class="field plus-button-wrapper">
-            <button mat-fab color="primary" type="submit" ><fa-icon [icon]="iconPack.plus"></fa-icon></button>
-
+            <button mat-fab color="primary" [disabled]='singlePurchaseForm.invalid' type='submit'><fa-icon [icon]="iconPack.plus"></fa-icon></button>
         </div>
     </div>
 </form>
