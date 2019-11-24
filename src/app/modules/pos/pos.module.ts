@@ -9,17 +9,21 @@ import { RouterModule } from '@angular/router';
 import { PosRoutes } from './pos.routes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemCardComponent } from './components/item-card/item-card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductSearchFilterPipe } from 'src/app/shared/pipes/product-search-filter.pipe';
 
 
 
 @NgModule({
-  declarations: [BillAreaComponent,PosScreenComponent,ProductSearchComponent, ItemCardComponent],
+  declarations: [BillAreaComponent,PosScreenComponent,ProductSearchComponent, ItemCardComponent, ProductSearchFilterPipe],
   imports: [
     CommonModule,
     SharedComponentsModule,
     MaterialModule,
     RouterModule.forChild(PosRoutes),
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PosModule { }

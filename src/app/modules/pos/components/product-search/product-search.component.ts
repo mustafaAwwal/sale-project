@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faBirthdayCake, faCross, faBicycle, faCar } from '@fortawesome/free-solid-svg-icons';
+import { ProductSearch } from 'src/app/shared/modals';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-search',
@@ -7,17 +8,20 @@ import { faBirthdayCake, faCross, faBicycle, faCar } from '@fortawesome/free-sol
   styleUrls: ['./product-search.component.scss']
 })
 export class ProductSearchComponent implements OnInit {
-  itemSearch = [
+  searchQuery = new FormControl('')
+  itemSearch:ProductSearch[] = [
     {
       itemCategory: 'Frequent',
       items: [
         {
           icon: '../../../../../assets/slicing/item.png',
-          name: 'Birthday Cake'
+          name: 'Birthday Cake',
+          unitPrice: 500
         },
         {
           icon: '../../../../../assets/slicing/item.png',
-          name: 'Wrong Plus Sign'
+          name: 'Wrong Plus Sign',
+          unitPrice: 500
         }
       ]
     },
@@ -26,11 +30,13 @@ export class ProductSearchComponent implements OnInit {
       items: [
         {
           icon: '../../../../../assets/slicing/item.png',
-          name: 'Cycle'
+          name: 'Cycle',
+          unitPrice: 500
         },
         {
           icon: '../../../../../assets/slicing/item.png',
-          name: 'Car'
+          name: 'Car',
+          unitPrice: 500
         }
       ]
     },
@@ -39,11 +45,13 @@ export class ProductSearchComponent implements OnInit {
       items: [
         {
           icon: '../../../../../assets/slicing/item.png',
-          name: 'Birthday Cake'
+          name: 'Birthday Cake',
+          unitPrice: 500
         },
         {
           icon: '../../../../../assets/slicing/item.png',
-          name: 'Wrong Plus Sign'
+          name: 'Wrong Plus Sign',
+          unitPrice: 500
         }
       ]
     }

@@ -1,13 +1,13 @@
 <div class="flex-container">
     <form action="">
         <mat-form-field>
-            <input type="text" matInput placeholder="Search">
+            <input type="text" autocomplete='off' matInput [formControl]='searchQuery' placeholder="Search">
         </mat-form-field>
     </form>
     <mat-tab-group>
         <mat-tab *ngFor='let itemPack of itemSearch' [label]="itemPack.itemCategory">
             <div class="item-flex">
-                <div class="item" *ngFor='let item of itemPack.items'>
+                <div class="item" *ngFor='let item of itemPack.items | productSearchFilter: searchQuery.value'>
                     <app-item-card [itemPack]='item'></app-item-card>
                 </div>
             </div>
