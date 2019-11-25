@@ -7,11 +7,12 @@ import { CategoryTableComponent } from './components/category-table/category-tab
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewCategoryComponent } from './components/new-category/new-category.component';
 
 
 
 @NgModule({
-  declarations: [CategoryComponent, CategoryTableComponent],
+  declarations: [CategoryComponent, CategoryTableComponent, NewCategoryComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(CategoryRoutes),

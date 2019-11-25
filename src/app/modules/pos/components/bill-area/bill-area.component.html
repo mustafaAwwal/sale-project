@@ -1,9 +1,9 @@
 <div class="form-wrapper">
-    <form action="">
+    <form [formGroup]='billAreaForm' (ngSubmit)='submitForm(billAreaForm.value)'>
         <div class="field-wrapper-button">
             <mat-form-field>
                 <mat-label>Customer Type</mat-label>
-                <mat-select>
+                <mat-select formControlName='customerType'>
                     <mat-option value='1'>Walk In customer</mat-option>
                     <mat-option value='2'>Online Customer</mat-option>
                 </mat-select>
@@ -20,28 +20,28 @@
                 <thead>
                     <tr>
                         <th>Product</th>
+                        <th>UnitPrice</th>
                         <th>Quantity</th>
-                        <th>Unit Price</th>
                         <th>Sub Total</th>
                         <th><fa-icon [icon]='iconPack.delete'></fa-icon></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody formArrayName='products'>
+                    <tr *ngFor='let productListItem of billAreaForm.get("products").controls ; let i = index' [formGroupName]='i'>
                         <td>
-                            <input type="text" readonly>
+                            <input formControlName='productName' type="text" readonly>
                         </td>
                         <td>
-                            <input type="number">
+                            <input formControlName='unitPrice' type="number" readonly>
                         </td>
                         <td>
-                            <input type="text" readonly>
+                            <input formControlName='quantity' (input)='quantityChange($event,i)' type="number" >
                         </td>
                         <td>
-                            <input type="text" readonly>
+                            <input formControlName='subTotal' type="number" readonly>
                         </td>
                         <td>
-                            <input type="text" readonly>
+                            <button mat-button color='warn' (click)='deleteProduct(i)'><fa-icon [icon]='iconPack.cross'></fa-icon></button>
                         </td>
                     </tr>
                 </tbody>
@@ -49,29 +49,29 @@
         </div>
         <div class='total-grid'>
             <div class="total-field">
-                <mat-form-field><input type="number" readonly matInput placeholder="Total Item"></mat-form-field>
+                <mat-form-field><input formControlName='totalItem' type="number" readonly matInput placeholder="Total Item"></mat-form-field>
             </div>
             <div class="total-field">
-                <mat-form-field><input type="number" readonly matInput placeholder="Total"></mat-form-field>
+                <mat-form-field><input formControlName='total' type="number" readonly matInput placeholder="Total"></mat-form-field>
             </div>
             <div class="total-field">
-                <mat-form-field><input type="number" matInput placeholder="Discount"></mat-form-field>
+                <mat-form-field><input (input)='settingFinalTotal()' formControlName='discount' type="text" matInput placeholder="Discount"></mat-form-field>
             </div>
             <div class="total-field">
-                <mat-form-field><input type="number" readonly matInput placeholder="Amount"></mat-form-field>
+                <mat-form-field><input formControlName='amount' type="number" readonly matInput placeholder="Amount"></mat-form-field>
             </div>
             <div class="total-field">
-                <mat-form-field><input type="number" readonly matInput placeholder="Vat"></mat-form-field>
+                <mat-form-field><input formControlName='vat' type="number" readonly matInput placeholder="Vat"></mat-form-field>
             </div>
         </div>
         <hr>
         <div class="field-wrapper">
-            <mat-form-field><input type="text" matInput placeholder="Total"></mat-form-field>
+            <mat-form-field><input formControlName='finalTotal' type="text" matInput placeholder="Total"></mat-form-field>
         </div>
         <div class="button-wrapper">
-            <div class="button"><button mat-raised-button color='warn'>Cancel</button></div>
+            <div class="button"><button mat-raised-button color='warn' (click)='resetForm()'>Cancel</button></div>
             <div class="button">
-                <button mat-raised-button color='accent'>Payment</button>
+                <button mat-raised-button color='accent' type="submit" [disabled]='billAreaForm.invalid'>Payment</button>
             </div>
         </div>
     </form>

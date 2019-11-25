@@ -7,11 +7,12 @@ import { SubCategoryTableComponent } from './components/sub-category-table/sub-c
 import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewSubCategoryComponent } from './components/new-sub-category/new-sub-category.component';
 
 
 
 @NgModule({
-  declarations: [SubCategoryListComponent, SubCategoryTableComponent],
+  declarations: [SubCategoryListComponent, SubCategoryTableComponent, NewSubCategoryComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(SubCategoryRoutes),

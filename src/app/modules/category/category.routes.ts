@@ -14,6 +14,7 @@ export const CategoryRoutes: Routes = [
                 path: '',
                 component: CategoryComponent
             }
+            
         ]
     }
 ]

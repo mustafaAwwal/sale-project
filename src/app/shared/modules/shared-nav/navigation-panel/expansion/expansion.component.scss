@@ -2,13 +2,19 @@
     padding: 5px 0px;
     a {
         text-decoration: none;
-        color: black;
+        color: #156ac4;
         width: 100%;
+        transition: 250ms;
     }
 }
-
+mat-panel-title {
+    color: #156ac4;
+}
 .active {
     font-weight: 500;
+    border-left: 3px solid #156ac4;
+    padding-left: 2px;
+    transition: 250ms;
 }
 .icon-wrapper {
     width: 30px;

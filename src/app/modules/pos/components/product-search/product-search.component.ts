@@ -1,65 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ProductSearch } from 'src/app/shared/modals';
 import { FormControl } from '@angular/forms';
-
+import {Items} from '../../../../shared/modals'
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
   styleUrls: ['./product-search.component.scss']
 })
 export class ProductSearchComponent implements OnInit {
+  @Output() productTrigger = new EventEmitter<Items>()
   searchQuery = new FormControl('')
-  itemSearch:ProductSearch[] = [
-    {
-      itemCategory: 'Frequent',
-      items: [
-        {
-          icon: '../../../../../assets/slicing/item.png',
-          name: 'Birthday Cake',
-          unitPrice: 500
-        },
-        {
-          icon: '../../../../../assets/slicing/item.png',
-          name: 'Wrong Plus Sign',
-          unitPrice: 500
-        }
-      ]
-    },
-    {
-      itemCategory: 'Bikes',
-      items: [
-        {
-          icon: '../../../../../assets/slicing/item.png',
-          name: 'Cycle',
-          unitPrice: 500
-        },
-        {
-          icon: '../../../../../assets/slicing/item.png',
-          name: 'Car',
-          unitPrice: 500
-        }
-      ]
-    },
-    {
-      itemCategory: 'Frequent',
-      items: [
-        {
-          icon: '../../../../../assets/slicing/item.png',
-          name: 'Birthday Cake',
-          unitPrice: 500
-        },
-        {
-          icon: '../../../../../assets/slicing/item.png',
-          name: 'Wrong Plus Sign',
-          unitPrice: 500
-        }
-      ]
-    }
-    
-  ]
+  @Input() itemSearch:ProductSearch[];
   constructor() { }
 
   ngOnInit() {
   }
-
+  productTriggerFunction(item) {
+    this.productTrigger.emit(item)
+  }
 }

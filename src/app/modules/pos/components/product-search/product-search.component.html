@@ -8,7 +8,7 @@
         <mat-tab *ngFor='let itemPack of itemSearch' [label]="itemPack.itemCategory">
             <div class="item-flex">
                 <div class="item" *ngFor='let item of itemPack.items | productSearchFilter: searchQuery.value'>
-                    <app-item-card [itemPack]='item'></app-item-card>
+                    <app-item-card class='cursor-class' (click)='productTriggerFunction(item)' [itemPack]='item'></app-item-card>
                 </div>
             </div>
         </mat-tab>

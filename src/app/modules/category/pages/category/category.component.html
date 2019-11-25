@@ -1,5 +1,6 @@
 <h1 class="main-heading">Category Index</h1>
 <div class="main-button-wrapper">
-    <div class="buttons"><button mat-raised-button color="primary"> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Category</button></div>
+    <div class="buttons"><button mat-raised-button color="primary" (click)='newCategory.statusChanger()'> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Category</button></div>
 </div>
 <app-category-table [incomingData]="tableData"></app-category-table>
+<app-new-category #newCategory></app-new-category>
