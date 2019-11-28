@@ -20,13 +20,13 @@ export class NewSaleComponent implements OnInit {
   productList = [
     {
       name: 'Pepsi',
-      value: 'ppi',
+      value: 'pepsi',
       code: 33301,
       unitPrice: 300
     },
     {
       name: 'pizza',
-      value: 'pza',
+      value: 'pizza',
       code: 33302,
       unitPrice: 3000
     }

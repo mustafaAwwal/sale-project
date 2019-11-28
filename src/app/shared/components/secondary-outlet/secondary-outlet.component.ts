@@ -11,12 +11,15 @@ import { RouterOutlet } from '@angular/router';
   ]
 })
 export class SecondaryOutletComponent implements OnInit {
-
+  visibleState = false;
   constructor() { }
 
   ngOnInit() {
   }
   preparedRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRoute && outlet.activatedRouteData['animation']
+  }
+  visibleStateToggler() {
+    this.visibleState = !this.visibleState;
   }
 }

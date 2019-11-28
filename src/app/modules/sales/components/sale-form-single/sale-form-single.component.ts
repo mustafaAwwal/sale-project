@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SaleSingleOutput } from 'src/app/shared/modals';
@@ -20,13 +20,13 @@ export class SaleFormSingleComponent implements OnInit {
   ngOnInit() {
     this.createForm()
   }
-  
+ 
   createForm(){
     this.saleSingleForm = this.fb.group({
       productName: ['',[Validators.required]],
-      unitPrice  : ['0',[Validators.required]],
+      unitPrice  : ['0',[Validators.required,Validators.min(1)]],
       quantity   : ['1',[Validators.required]],
-      subTotal   : ['0',[Validators.required]]
+      subTotal   : ['0',[Validators.required,Validators.min(1)]]
     })
   }
   addProduct(data) {
@@ -40,11 +40,14 @@ export class SaleFormSingleComponent implements OnInit {
     
   }
   updateFormProduct(data) {
-    let product = this.productList.find(x => x.value==data.value)
-    this.saleSingleForm.patchValue({
-      unitPrice: product.unitPrice,
-      subTotal: product.unitPrice*this.quantity
-    })
+    let product = this.productList.find(x => x.value==data)
+    if(product){
+      this.saleSingleForm.patchValue({
+        unitPrice: product.unitPrice,
+        subTotal: product.unitPrice*this.quantity
+      })
+    }
+    
   }
   quantityChange(data) {
     this.saleSingleForm.patchValue({

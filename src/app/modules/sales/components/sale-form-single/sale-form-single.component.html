@@ -1,12 +1,20 @@
 <form [formGroup]='saleSingleForm' (ngSubmit)='addProduct(saleSingleForm.value)'>
     <div class="fields-wrapper" >
-        <div class="field">
+        <!-- <div class="field">
             <mat-form-field>
                 <mat-label>Select a Product</mat-label>
                 <mat-select formControlName='productName' (selectionChange)='updateFormProduct($event)'>
                     <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
                 </mat-select>
             </mat-form-field>
+        </div> -->
+        <div class="field">
+            <mat-form-field>
+                <input type="text" matInput formControlName='productName' (input)='updateFormProduct($event.target.value)' placeholder="Select Product" [matAutocomplete]="auto">
+            </mat-form-field>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)='updateFormProduct($event.option.value)'>
+                <mat-option *ngFor="let product of productList | productSearchFilter: saleSingleForm.controls['productName'].value" [value]="product.value">{{product.name}}</mat-option>
+            </mat-autocomplete>
         </div>
         <div class="field">
             <mat-form-field>
