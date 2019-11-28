@@ -1,11 +1,17 @@
-.wrapper {
+.wrapper-with-sidenav {
     padding: 60px 30px 30px 250px;
     position: relative;
     transition: 400ms;
 }
+.wrapper-without-sidenav {
+    padding: 60px 30px 30px 30px;
+    position: relative;
+    transition: 400ms;
+}
 @media only screen and (max-width: 992px) {
-    .wrapper {
-        padding-left: 30px;
+    .wrapper-with-sidenav{
+        padding: 60px 30px 30px 30px;
+        position: relative;
         transition: 400ms;
     }
 }

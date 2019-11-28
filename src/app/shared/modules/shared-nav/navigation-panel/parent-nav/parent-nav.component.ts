@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {faBars} from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'app-parent-nav',
@@ -9,9 +9,12 @@ export class ParentNavComponent implements OnInit {
   iconPack = {
     bars: faBars
   }
+  @Output() wrapperToggler = new EventEmitter<boolean>()
   constructor() { }
 
   ngOnInit() {
   }
-
+  wrapperTogglerFunction() {
+    this.wrapperToggler.emit(true)
+  }
 }

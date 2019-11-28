@@ -1,4 +1,4 @@
-<app-parent-nav></app-parent-nav>
-<div class="wrapper" >
+<app-parent-nav (wrapperToggler)='visibleStateToggler()'></app-parent-nav>
+<div [ngClass]='visibleState ? "wrapper-with-sidenav":"wrapper-without-sidenav"' >
     <router-outlet ></router-outlet>
 </div>    

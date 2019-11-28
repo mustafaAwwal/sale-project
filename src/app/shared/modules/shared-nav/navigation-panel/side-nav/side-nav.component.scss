@@ -1,13 +1,11 @@
 .container {
-    width: 220px;
     position: fixed;
-    border-right: 1px solid rgba(128, 128, 128, 0.438);
     z-index: 100;
     padding-top: 60px;
     height: 100%;
     overflow-y: scroll;
     scrollbar-width: none;
-    
+    transition: 400ms;
     .nav-area {
         z-index: 101;
         height: 100%;
@@ -23,8 +21,17 @@
 ::-webkit-scrollbar {
     display: none !important;
 }
+.show {
+    width: 220px; 
+    border-right: 1px solid rgba(128, 128, 128, 0.438);
+    transition: 400ms;
 
-
+}
+.hidden {
+    width: 0px;
+    border-right: 0px;
+    transition: 400ms;
+}
 @media only screen and (max-width: 992px) {
     .show {
         width: 100%;

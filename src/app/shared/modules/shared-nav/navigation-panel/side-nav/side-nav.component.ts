@@ -17,16 +17,7 @@ export class SideNavComponent implements OnInit {
       routeName: 'Home',
       route: ['/','admin','dashboard','home']
     },
-    {
-      icon: faTag,
-      routeName: 'Category',
-      route: ['/','admin','category','categoryList']
-    },
-    {
-      icon: faTags,
-      routeName: 'Sub Category',
-      route: ['/','admin','subCategory','subCategoryList']
-    },
+    
     {
       icon: faMoneyBill,
       routeName: 'Transaction',
@@ -82,7 +73,15 @@ export class SideNavComponent implements OnInit {
         {
           route: ['/','admin','pos','screen'],
           routeName: 'POS Screen'
-        }
+        },
+        {
+          routeName: 'Category',
+          route: ['/','admin','category','categoryList']
+        },
+        {
+          routeName: 'Sub Category',
+          route: ['/','admin','subCategory','subCategoryList']
+        },
       ]
     },
     {

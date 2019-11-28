@@ -1,10 +1,13 @@
 <div class="header">
     <div class="divider">
-        <div class="brand" [routerLink]='["/","admin"]'>
+        <div class="brand" >
+            <div class="side-nav-icon">
+                <fa-icon [icon]='iconPack.bars' size='2x' (click)='sideNavTogglerFunction()'></fa-icon>
+            </div>
             <div class="logo-wrapper">
                 <img src="../../../../../../assets/slicing/logo.svg" alt="">
             </div>
-            <div class="brand-name">
+            <div class="brand-name" [routerLink]='["/","admin"]'>
                 <h4 class="heading">Velocity POS</h4> 
             </div>
         </div>
