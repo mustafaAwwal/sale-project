@@ -18,7 +18,7 @@ export class PurchaseTableComponent implements OnInit {
       date: 'November 8 2018',
       billNo:'1',
       supplier: 'pizza hutt',
-      netTotal: '30000',
+      netTotal: '3000',
       paid: '25000'
     },
     {

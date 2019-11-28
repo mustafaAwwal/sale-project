@@ -11,6 +11,20 @@ export class NewSaleComponent implements OnInit {
     plus: faPlus,
     cross:  faTimes
   }
+  billTypes = [
+    {
+      value: 'Cash Sale'
+    },
+    {
+      value: 'Credit Sale'
+    },
+    {
+      value: 'Quotation'
+    },
+    {
+      value: 'Sales Return'
+    }
+  ]
   customerTypes = [
     {
       type: 'Walk in Customer',
@@ -57,6 +71,9 @@ export class NewSaleComponent implements OnInit {
       netTotal: ['',[Validators.required]],
       paymentMethod: ['',[Validators.required]],
       paid: ['',[Validators.required]],
+      date: ['',[Validators.required]],
+      invoiceNo: ['',[Validators.required]],
+      billType: ['',[Validators.required]],
       products: this.fb.array([
       ])
     })

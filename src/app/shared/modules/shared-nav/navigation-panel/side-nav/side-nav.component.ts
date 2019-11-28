@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBoxes, faDollarSign, faShoppingCart, faUsers, faTag, faTags, faTh, faHandHoldingUsd, faMoneyBill, faIndustry, faChartPie, faCogs } from '@fortawesome/free-solid-svg-icons';
+import { faBoxes, faDollarSign, faShoppingCart, faUsers, faTag, faTags, faTh, faHandHoldingUsd, faMoneyBill, faIndustry, faChartPie, faCogs, faFileArchive, faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-side-nav',
@@ -16,29 +16,13 @@ export class SideNavComponent implements OnInit {
       icon: faTh,
       routeName: 'Home',
       route: ['/','admin','dashboard','home']
-    },
-    
-    {
-      icon: faMoneyBill,
-      routeName: 'Transaction',
-      route: ['/','admin','transaction','transactionList']
-    },
-    {
-      icon: faDollarSign,
-      routeName: 'Expense',
-      route: ['/','admin','expense','expenseList']
-    },
-    {
-      icon: faIndustry,
-      routeName: 'Branch',
-      route: ['/','admin','branch','branchList']
-    },
-    {
-      icon: faChartPie,
+    } 
+  ]
+  reportRoute  = {
+    icon: faChartPie,
       routeName: 'Report',
       route: ['/','admin','report','reportDashboard']
-    }
-  ]
+  }
   routesSideNav = [
     {
       header: 'Products',
@@ -55,6 +39,36 @@ export class SideNavComponent implements OnInit {
         {
           route: ['/','admin','product','productList','barcode'],
           routeName: 'Print BarCode'
+        },
+        {
+          routeName: 'Category',
+          route: ['/','admin','category','categoryList']
+        },
+        {
+          routeName: 'Sub Category',
+          route: ['/','admin','subCategory','subCategoryList']
+        },
+        {
+          route: ['/','admin','people','peopleType','supplier'],
+          routeName: 'Supplier'
+        },
+      ]
+    },
+    {
+      header: 'Purchase',
+      icon: faHandHoldingUsd,
+      routes: [
+        {
+          route: ['/','admin','purchase','purchaseList'],
+          routeName: 'Purchase List'
+        },
+        {
+          route: ['/','admin','purchase','purchaseList','newPurchase'],
+          routeName: 'Create New Purchase'
+        },
+        {
+          route: ['/','admin','purchase','purchaseList','newPurchase'],
+          routeName: 'Purchase Report'
         }
       ]
     },
@@ -75,47 +89,55 @@ export class SideNavComponent implements OnInit {
           routeName: 'POS Screen'
         },
         {
-          routeName: 'Category',
-          route: ['/','admin','category','categoryList']
-        },
-        {
-          routeName: 'Sub Category',
-          route: ['/','admin','subCategory','subCategoryList']
+          route: ['/','admin','pos','screen'],
+          routeName: 'Sales Report'
         },
       ]
     },
     {
-      header: 'Purchase',
-      icon: faHandHoldingUsd,
+      header: 'Accounts',
+      icon: faFileInvoiceDollar,
       routes: [
         {
-          route: ['/','admin','purchase','purchaseList'],
-          routeName: 'Purchase List'
+          routeName: 'Customer Ledger',
+          route: ['/','admin','transaction','transactionList']
         },
         {
-          route: ['/','admin','purchase','purchaseList','newPurchase'],
-          routeName: 'Create New Purchase'
-        }
+          routeName: 'Supplier Ledger',
+          route: ['/','admin','transaction','transactionList']
+        },
+        {
+          routeName: 'Voucher',
+          route: ['/','admin','transaction','transactionList']
+        },
+        {
+          routeName: 'Transaction',
+          route: ['/','admin','transaction','transactionList']
+        },
+        {
+          routeName: 'Expense',
+          route: ['/','admin','expense','expenseList']
+        },
+        {
+          routeName: 'Profit and Loss',
+          route: ['/','admin','transaction','transactionList']
+        },
       ]
     },
-    {
-      header: 'People',
-      icon: faUsers,
-      routes: [
-        {
-          route: ['/','admin','people','peopleType'],
-          routeName: 'Customer'
-        },
-        {
-          route: ['/','admin','people','peopleType','supplier'],
-          routeName: 'Supplier'
-        },
-        {
-          route: ['/','admin','people','peopleType','user'],
-          routeName: 'User'
-        }
-      ]
-    },
+    
+    
+    // {
+    //   header: 'People',
+    //   icon: faUsers,
+    //   routes: [
+    //     {
+    //       route: ['/','admin','people','peopleType'],
+    //       routeName: 'Customer'
+    //     },
+        
+
+    //   ]
+    // },
     {
       header: 'Settings',
       icon: faCogs,
@@ -125,13 +147,14 @@ export class SideNavComponent implements OnInit {
           routeName: 'General Settings'
         },
         {
-          route: ['/','admin','settings','generalSettings','role'],
-          routeName: 'Roles'
+          route: ['/','admin','people','peopleType','user'],
+          routeName: 'User'
         },
         {
-          route: ['/','admin','settings','generalSettings','vat'],
-          routeName: 'VAT'
-        }
+          icon: faIndustry,
+          routeName: 'Branch',
+          route: ['/','admin','branch','branchList']
+        },
       ]
     }
   ]

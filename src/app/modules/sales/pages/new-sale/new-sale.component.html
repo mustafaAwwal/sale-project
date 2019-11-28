@@ -1,14 +1,34 @@
 <h1 class="main-heading">Create New Sale</h1>
 <div class="form-wrapper">
     <form [formGroup]="newSaleForm" (ngSubmit)="submitForm(newSaleForm.value)">
+        
         <div class="select-wrapper">
-            <mat-form-field><input type="text" matInput placeholder="Invoice Number" value='0001'></mat-form-field>
-            <mat-form-field>
-                <mat-label>Customer</mat-label>
-                <mat-select formControlName="customerType" >
-                    <mat-option *ngFor="let customer of customerTypes" [value]="customer.value">{{customer.type}}</mat-option>
-                </mat-select>
-            </mat-form-field>
+            <div class="left-area select-fields">
+                <mat-form-field>
+                    <mat-label>Customer</mat-label>
+                    <mat-select formControlName="customerType" >
+                        <mat-option *ngFor="let customer of customerTypes" [value]="customer.value">{{customer.type}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Enter barcode value">
+                </mat-form-field>
+            </div>
+            <div class="right-area select-fields">
+                <mat-form-field><input formControlName='invoiceNo' type="text" matInput placeholder="Invoice Number" value='0001' readonly></mat-form-field>
+        
+                <mat-form-field>
+                    <input matInput formControlName='date' [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Bill Type</mat-label>
+                    <mat-select formControlName="billType" >
+                        <mat-option *ngFor="let bill of billTypes" [value]="bill.value">{{bill.value}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </div>
         <div class="selection-area">
             <div class="single-form-wrapper">

@@ -5,9 +5,13 @@ form {
 .select-wrapper {
     flex: 0 1 100%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
-    mat-form-field {
+    .select-fields {
         flex: 0 1 25%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
     }
 }
 .selection-area {
@@ -19,7 +23,7 @@ form {
         flex: 0 1 auto;
     }
     .array-wrapper  {
-        flex: 0 1 auto;
+        flex: 1 1 auto;
         display: flex;
         overflow: scroll;
         flex-flow: column nowrap;
