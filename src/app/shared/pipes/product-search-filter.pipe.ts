@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ProductSearch } from '../modals';
 
 @Pipe({
   name: 'productSearchFilter'
