@@ -10,6 +10,7 @@ import { NewSaleComponent } from './pages/new-sale/new-sale.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 import { SaleFormSingleComponent } from './components/sale-form-single/sale-form-single.component';
+import { CommonPipeModule } from 'src/app/shared/pipes/common-pipe.module';
 
 
 
@@ -22,7 +23,8 @@ import { SaleFormSingleComponent } from './components/sale-form-single/sale-form
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    CommonPipeModule
   ]
 })
 export class SalesModule { }
