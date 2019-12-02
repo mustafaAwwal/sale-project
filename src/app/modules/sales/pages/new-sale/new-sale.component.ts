@@ -7,6 +7,9 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
   styleUrls: ['./new-sale.component.scss']
 })
 export class NewSaleComponent implements OnInit {
+  get productArray() {
+    return <FormArray>this.newSaleForm.get('products')
+  }
   iconPack = {
     plus: faPlus,
     cross:  faTimes

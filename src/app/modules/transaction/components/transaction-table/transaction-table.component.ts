@@ -19,5 +19,10 @@ export class TransactionTableComponent implements OnInit {
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.incomingData)
   }
+  editHandler(row) {
 
+  }
+  detailHandler(row) {
+    
+  }
 }

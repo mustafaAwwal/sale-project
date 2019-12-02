@@ -16,7 +16,12 @@ export class ProductTableComponent implements OnInit {
   columnsToDisplay: String[] = ['id','name','inStock','Actions']
   productListData = new MatTableDataSource(productList)
   constructor() { }
+  editHandler(row) {
 
+  }
+  detailHandler(row) {
+
+  }
   ngOnInit() {
   }
 }

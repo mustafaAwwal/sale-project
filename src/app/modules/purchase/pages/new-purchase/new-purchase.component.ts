@@ -8,6 +8,9 @@ import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./new-purchase.component.scss']
 })
 export class NewPurchaseComponent implements OnInit { 
+  get productArray() {
+    return <FormArray>this.newPurchaseForm.get('products')
+  }
   productListQuantity = 0;
   iconPack = {
     plus: faPlus,

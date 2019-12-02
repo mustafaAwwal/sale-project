@@ -35,7 +35,7 @@
                 <app-sale-form-single [productList]='productList' (singleFormOutput)='addSingleProduct($event)'></app-sale-form-single>
             </div>
             <div class='array-wrapper' formArrayName='products'>
-                <div class="fields-wrapper" *ngFor='let productSaleForm of newSaleForm.get("products").controls;let i=index' [formGroupName]='i'>
+                <div class="fields-wrapper" *ngFor='let productSaleForm of productArray.controls;let i=index' [formGroupName]='i'>
                     <div class="field">
                         <mat-form-field>
                             <mat-label>Select a Product</mat-label>

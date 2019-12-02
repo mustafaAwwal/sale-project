@@ -15,6 +15,9 @@ export class BillAreaComponent implements OnInit,OnChanges {
     delete: faTrash,
     cross: faTimes
   }
+  get billArray() {
+    return <FormArray>this.billAreaForm.get('products')
+  }
   billAreaForm: FormGroup;
   constructor(private fb: FormBuilder) { }
 

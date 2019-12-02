@@ -27,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody formArrayName='products'>
-                    <tr *ngFor='let productListItem of billAreaForm.get("products").controls ; let i = index' [formGroupName]='i'>
+                    <tr *ngFor='let productListItem of billArray.controls ; let i = index' [formGroupName]='i'>
                         <td>
                             <input formControlName='productName' type="text" readonly>
                         </td>

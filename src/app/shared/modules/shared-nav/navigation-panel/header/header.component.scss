@@ -50,3 +50,8 @@
         cursor: pointer;
     }
 }
+@media only screen and (max-width: 992px) {
+    .brand {
+        flex: 0 1 50%;
+    }
+}
