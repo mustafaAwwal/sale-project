@@ -42,7 +42,7 @@ export class SideNavComponent implements OnInit {
         },
         {
           routeName: 'Category',
-          route: ['/','admin','category','categoryList']
+          route: ['/','admin','product','productList','category']
         },
         {
           routeName: 'Sub Category',

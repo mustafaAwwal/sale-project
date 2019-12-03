@@ -36,10 +36,7 @@ export const MainRoutes: Routes = [
                 path: 'people',
                 loadChildren: './modules/people/people.module#PeopleModule'
             },
-            {
-                path: 'category',
-                loadChildren: './modules/category/category.module#CategoryModule'
-            },
+
             {
                 path: 'subCategory',
                 loadChildren: './modules/sub-category/sub-category.module#SubCategoryModule'

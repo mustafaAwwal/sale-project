@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-category-table',
@@ -19,6 +19,7 @@ export class CategoryTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.incomingData);
+
   }
   editHandler(row) {
   }

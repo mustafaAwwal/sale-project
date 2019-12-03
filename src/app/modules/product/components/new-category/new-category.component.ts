@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCategoryComponent implements OnInit {
   showStatus = false;
+
   constructor() { }
 
   ngOnInit() {
