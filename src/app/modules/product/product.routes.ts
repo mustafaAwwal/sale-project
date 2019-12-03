@@ -3,6 +3,7 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { NewProductComponent } from './pages/new-product/new-product.component';
 import { PrintBarcodeComponent } from './pages/print-barcode/print-barcode.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { SubCategoryListComponent } from './pages/sub-category-list/sub-category-list.component';
 
 export const ProductRoutes: Routes = [
     {
@@ -32,6 +33,11 @@ export const ProductRoutes: Routes = [
                 path: 'category',
                 component: CategoryComponent,
                 data: {animation: 'category'}
+            },
+            {
+                path: 'subcategory',
+                component: SubCategoryListComponent,
+                data: {animation: 'subcategory'}
             }
         ]
     }

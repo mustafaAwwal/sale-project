@@ -11,15 +11,17 @@ import { ProductTableComponent } from './components/product-table/product-table.
 import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 import { CategoryComponent } from './pages/category/category.component';
-import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
 import { SupplierComponent } from './pages/supplier/supplier.component';
 import { CategoryTableComponent } from './components/category-table/category-table.component';
 import { NewCategoryComponent } from './components/new-category/new-category.component';
+import { SubCategoryListComponent } from './pages/sub-category-list/sub-category-list.component';
+import { NewSubCategoryComponent } from './components/new-sub-category/new-sub-category.component';
+import { SubCategoryTableComponent } from './components/sub-category-table/sub-category-table.component';
 
 
 
 @NgModule({
-  declarations: [ProductListComponent, NewProductComponent, PrintBarcodeComponent, ProductTableComponent, CategoryComponent, SubCategoryComponent, SupplierComponent, CategoryTableComponent, NewCategoryComponent],
+  declarations: [ProductListComponent, NewProductComponent, PrintBarcodeComponent, ProductTableComponent, CategoryComponent, SupplierComponent, CategoryTableComponent, NewCategoryComponent,SubCategoryListComponent,NewSubCategoryComponent,SubCategoryTableComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(ProductRoutes),
