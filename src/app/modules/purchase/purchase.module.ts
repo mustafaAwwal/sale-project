@@ -10,6 +10,7 @@ import { NewPurchaseComponent } from './pages/new-purchase/new-purchase.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
 import { SinglePurchaseFormComponent } from './components/single-purchase-form/single-purchase-form.component';
+import { CommonPipeModule } from 'src/app/shared/pipes/common-pipe.module';
 
 
 
@@ -22,7 +23,8 @@ import { SinglePurchaseFormComponent } from './components/single-purchase-form/s
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    CommonPipeModule
   ]
 })
 export class PurchaseModule { }

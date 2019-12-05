@@ -1,7 +1,5 @@
-.field-wrapper {
-    flex: 0 1 auto;
+.fields-wrapper {
     display: flex;
-    width: 100%;
     flex-flow: row nowrap;
     justify-content: space-between;
     .field {

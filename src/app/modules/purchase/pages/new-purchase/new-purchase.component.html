@@ -1,47 +1,72 @@
+
 <h1 class="main-heading">Create New Purchase</h1>
 <div class="form-wrapper">
     <form [formGroup]="newPurchaseForm" (ngSubmit)="submitForm(newPurchaseForm.value)">
+        
         <div class="select-wrapper">
-            <mat-form-field>
-                <mat-label>Supplier</mat-label>
-                <mat-select formControlName="supplierType" >
-                    <mat-option *ngFor="let supplier of suppliers" [value]="supplier.value">{{supplier.type}}</mat-option>
-                </mat-select>
-            </mat-form-field>
+            <div class="left-area select-fields">
+                <mat-form-field>
+                    <mat-label>Supplier</mat-label>
+                    <mat-select formControlName="supplierType" >
+                        <mat-option *ngFor="let supplier of suppliers" [value]="supplier.name">{{supplier.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Enter barcode value">
+                </mat-form-field>
+            </div>
+            <div class="right-area select-fields">
+                <mat-form-field><input formControlName='invoiceNo' type="text" matInput placeholder="Invoice Number" value='0001' readonly></mat-form-field>
+        
+                <mat-form-field>
+                    <input matInput formControlName='date' [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Bill Type</mat-label>
+                    <mat-select formControlName="billType" >
+                        <mat-option *ngFor="let bill of billTypes" [value]="bill.value">{{bill.value}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </div>
-        <div class="single-purchase-form">
-            <app-single-purchase-form [productList]='productList' (singleFormOutput)='addSingleProduct($event)'></app-single-purchase-form>
-        </div>
-        <div class='array-wrapper' formArrayName='products'>
-            <div class="fields-wrapper" *ngFor='let productPurchaseForm of productArray.controls;let i=index' [formGroupName]='i'>
-                <div class="field">
-                    <mat-form-field>
-                        <mat-label>Select a Product</mat-label>
-                        <mat-select formControlName="productName" (selectionChange)='updateFormProduct($event,i)'>
-                            <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="field">
-                    <mat-form-field>
-                        <input formControlName="unitPrice" type="number" readonly matInput placeholder="Unit Price" #unitPrice>
-                    </mat-form-field>
-                </div>
-                <div class="field">
-                    <mat-form-field>
-                        <input formControlName="quantity" (input)='quantityChange(i)' type="number" matInput placeholder="Quantity" #quantity>
-                    </mat-form-field>
-                </div>
-                <div class="field">
-                    <mat-form-field>
-                        <input formControlName="subTotal" type="number" readonly matInput placeholder="Sub Total" >
-                    </mat-form-field>
-                </div>
-                <div class="field plus-button-wrapper">
-                    <button mat-fab color="warn" type='button' (click)='deleteProduct(i)'><fa-icon [icon]="iconPack.cross"></fa-icon></button>
+        <div class="selection-area">
+            <div class="single-form-wrapper">
+                <app-single-purchase-form [productList]='productList' (singleFormOutput)='addSingleProduct($event)'></app-single-purchase-form>
+            </div>
+            <div class='array-wrapper' formArrayName='products'>
+                <div class="fields-wrapper" *ngFor='let productPurchaseForm of productArray.controls;let i=index' [formGroupName]='i'>
+                    <div class="field">
+                        <mat-form-field>
+                            <mat-label>Select a Product</mat-label>
+                            <mat-select formControlName="productName" (selectionChange)='updateFormProduct($event,i)'>
+                                <mat-option *ngFor="let product of productList" [value]="product.value">{{product.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="field">
+                        <mat-form-field>
+                            <input formControlName="unitPrice" type="number" readonly matInput placeholder="Unit Price" #unitPrice>
+                        </mat-form-field>
+                    </div>
+                    <div class="field">
+                        <mat-form-field>
+                            <input formControlName="quantity" (input)='quantityChange(i)' type="number" matInput placeholder="Quantity" #quantity>
+                        </mat-form-field>
+                    </div>
+                    <div class="field">
+                        <mat-form-field>
+                            <input formControlName="subTotal" type="number" readonly matInput placeholder="Sub Total" >
+                        </mat-form-field>
+                    </div>
+                    <div class="field plus-button-wrapper">
+                        <button mat-fab color="warn" type='button' (click)='deleteProduct(i)'><fa-icon [icon]="iconPack.cross"></fa-icon></button>
+                    </div>
                 </div>
             </div>
         </div>
+        
         
         <div class="calculation-area">
             <div class="calculation-fields">

@@ -17,11 +17,13 @@ import { NewCategoryComponent } from './components/new-category/new-category.com
 import { SubCategoryListComponent } from './pages/sub-category-list/sub-category-list.component';
 import { NewSubCategoryComponent } from './components/new-sub-category/new-sub-category.component';
 import { SubCategoryTableComponent } from './components/sub-category-table/sub-category-table.component';
+import { SupplierTableComponent } from './components/supplier-table/supplier-table.component';
+import { SupplierFormComponent } from './pages/supplier-form/supplier-form.component';
 
 
 
 @NgModule({
-  declarations: [ProductListComponent, NewProductComponent, PrintBarcodeComponent, ProductTableComponent, CategoryComponent, SupplierComponent, CategoryTableComponent, NewCategoryComponent,SubCategoryListComponent,NewSubCategoryComponent,SubCategoryTableComponent],
+  declarations: [ProductListComponent, NewProductComponent, PrintBarcodeComponent, ProductTableComponent, CategoryComponent, SupplierComponent, CategoryTableComponent, NewCategoryComponent,SubCategoryListComponent,NewSubCategoryComponent,SubCategoryTableComponent, SupplierTableComponent, SupplierFormComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(ProductRoutes),

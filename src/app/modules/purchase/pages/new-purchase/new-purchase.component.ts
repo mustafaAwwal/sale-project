@@ -24,16 +24,30 @@ export class NewPurchaseComponent implements OnInit {
       name: 'something else'
     }
   ]
+  billTypes = [
+    {
+      value: 'Cash Sale'
+    },
+    {
+      value: 'Credit Sale'
+    },
+    {
+      value: 'Quotation'
+    },
+    {
+      value: 'Sales Return'
+    }
+  ]
   productList = [
     {
       name: 'Pepsi',
-      value: 'ppi',
+      value: 'Pepsi',
       code: 33301,
       unitPrice: '300'
     },
     {
       name: 'pizza',
-      value: 'pza',
+      value: 'pizza',
       code: 33302,
       unitPrice: '3000'
     }
@@ -64,6 +78,9 @@ export class NewPurchaseComponent implements OnInit {
       netTotal: ['',[Validators.required]],
       paymentMethod: ['',[Validators.required]],
       paid: ['',[Validators.required]],
+      date: ['',[Validators.required]],
+      invoiceNo: ['',[Validators.required]],
+      billType: ['',[Validators.required]],
       products: this.fb.array([
       ])
     })

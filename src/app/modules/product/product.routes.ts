@@ -4,6 +4,8 @@ import { NewProductComponent } from './pages/new-product/new-product.component';
 import { PrintBarcodeComponent } from './pages/print-barcode/print-barcode.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { SubCategoryListComponent } from './pages/sub-category-list/sub-category-list.component';
+import { SupplierComponent } from './pages/supplier/supplier.component';
+import { SupplierFormComponent } from './pages/supplier-form/supplier-form.component';
 
 export const ProductRoutes: Routes = [
     {
@@ -38,6 +40,16 @@ export const ProductRoutes: Routes = [
                 path: 'subcategory',
                 component: SubCategoryListComponent,
                 data: {animation: 'subcategory'}
+            },
+            {
+                path: 'supplier',
+                component: SupplierComponent,
+                data: {animation:'supplier'}
+            },
+            {
+                path: 'supplierForm',
+                component: SupplierFormComponent,
+                data: {animation:'SupplierForm'}
             }
         ]
     }

@@ -5,38 +5,50 @@ form {
 .select-wrapper {
     flex: 0 1 100%;
     display: flex;
-    justify-content: center;
-    mat-form-field {
-        flex: 0 1 50%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .select-fields {
+        flex: 0 1 25%;
+        display: flex;
+        flex-flow: column nowrap;
     }
 }
-.single-purchase-form {
-    flex: 0 1 100%;
-}
-.array-wrapper  {
-    flex: 0 1 100%;
+.selection-area {
+    flex: 1 1 auto;
     display: flex;
-    flex-flow: column-reverse nowrap;
-    .fields-wrapper {
+    height: 450px;
+    flex-flow: column nowrap;
+    .single-form-wrapper{
         flex: 0 1 auto;
+    }
+    .array-wrapper  {
+        flex: 1 1 auto;
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        .field {
-            flex: 1 1 auto;
-            padding: 0px 10px;
-            mat-form-field {
-                width: 100%;
+        overflow: scroll;
+        flex-flow: column nowrap;
+        .fields-wrapper {
+            flex: 0 1 auto;
+            display: flex;
+            flex-flow: row nowrap;
+            .field {
+                flex: 1 1 auto;
+                padding: 0px 10px;
+                mat-form-field {
+                    width: 100%;
+                }
+            }
+            .plus-button-wrapper {
+                flex: 0 1 auto;
             }
         }
-        .plus-button-wrapper {
-            flex: 0 1 auto;
-        }
+    
     }
-
 }
+
+
 .calculation-area {
-    flex: 0 1 100%;
+    flex: 0 1 auto;
+    padding: 0px 0px 0px 30px;
     flex-flow: row nowrap;
     display: flex;
     justify-content: flex-end;

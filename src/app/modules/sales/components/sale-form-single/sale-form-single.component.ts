@@ -47,6 +47,12 @@ export class SaleFormSingleComponent implements OnInit {
         subTotal: product.unitPrice*this.quantity
       })
     }
+    else {
+      this.saleSingleForm.patchValue({
+        unitPrice: '',
+        subTotal: ''
+      })
+    }
     
   }
   quantityChange(data) {

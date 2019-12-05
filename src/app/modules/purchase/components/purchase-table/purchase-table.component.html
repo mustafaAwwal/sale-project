@@ -1,30 +1,39 @@
-<table mat-table [dataSource]='purchaseData' class="mat-elevation-z8">
-    <ng-container matColumnDef='date'>
-        <th mat-header-cell *matHeaderCellDef>Date</th>
-        <td mat-cell *matCellDef="let row">{{row.date}}</td>
-    </ng-container>
-    <ng-container matColumnDef='billNo'>
-        <th mat-header-cell *matHeaderCellDef>Bill No</th>
-        <td mat-cell *matCellDef="let row">{{row.billNo}}</td>
-    </ng-container>
-    <ng-container matColumnDef='supplier'>
-        <th mat-header-cell *matHeaderCellDef>Supplier</th>
-        <td mat-cell *matCellDef="let row">{{row.supplier}}</td>
-    </ng-container>
-    <ng-container matColumnDef='netTotal'>
-        <th mat-header-cell *matHeaderCellDef>Net Total</th>
-        <td mat-cell *matCellDef="let row">{{row.netTotal}}</td>
-    </ng-container>
-    <ng-container matColumnDef='paid'>
-        <th mat-header-cell *matHeaderCellDef>Paid</th>
-        <td mat-cell *matCellDef="let row">{{row.paid}}</td>
-    </ng-container>
-    <ng-container matColumnDef='actions'>
-        <th mat-header-cell *matHeaderCellDef>Actions</th>
-        <td mat-cell *matCellDef="let row">
-            <app-table-action buttons='["edit","delete","detail"]'></app-table-action>
-        </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-    <tr mat-row *matRowDef = "let row: columns: columnsToDisplay"></tr>
-</table>
+<div class="mat-elevation-z8">
+    <div class="field-wrapper">
+        <mat-form-field>
+            <input matInput type="text" (input)='filterTableFunction($event.target.value)' placeholder="Search">
+        </mat-form-field>
+    </div>
+    <table mat-table matSort [dataSource]='dataSource'>
+        <ng-container matColumnDef='date'>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+            <td mat-cell *matCellDef="let row">{{row.date}}</td>
+        </ng-container>
+        <ng-container matColumnDef='billNo'>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Bill No</th>
+            <td mat-cell *matCellDef="let row">{{row.billNo}}</td>
+        </ng-container>
+        <ng-container matColumnDef='supplier'>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Supplier</th>
+            <td mat-cell *matCellDef="let row">{{row.supplier}}</td>
+        </ng-container>
+        <ng-container matColumnDef='netTotal'>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Net Total</th>
+            <td mat-cell *matCellDef="let row">{{row.netTotal}}</td>
+        </ng-container>
+        <ng-container matColumnDef='paid'>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Paid</th>
+            <td mat-cell *matCellDef="let row">{{row.paid}}</td>
+        </ng-container>
+        <ng-container matColumnDef='actions'>
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let row">
+                <app-table-action buttons='["edit","delete","detail"]'></app-table-action>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef = "let row: columns: columnsToDisplay"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>

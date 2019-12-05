@@ -40,11 +40,19 @@ export class SinglePurchaseFormComponent implements OnInit {
     
   }
   updateFormProduct(data) {
-    let product = this.productList.find(x => x.value==data.value)
-    this.singlePurchaseForm.patchValue({
-      unitPrice: product.unitPrice,
-      subTotal: product.unitPrice*this.quantity
-    })
+    let product = this.productList.find(x => x.value==data)
+    if(product){
+      this.singlePurchaseForm.patchValue({
+        unitPrice: product.unitPrice,
+        subTotal: product.unitPrice*this.quantity
+      })
+    }
+    else {
+      this.singlePurchaseForm.patchValue({
+        unitPrice: '',
+        subTotal: ''
+      })
+    }
   }
   quantityChange(data) {
     this.singlePurchaseForm.patchValue({
