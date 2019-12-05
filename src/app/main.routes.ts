@@ -33,22 +33,6 @@ export const MainRoutes: Routes = [
                 loadChildren: './modules/product/product.module#ProductModule'
             },
             {
-                path: 'people',
-                loadChildren: './modules/people/people.module#PeopleModule'
-            },
-            {
-                path: 'transaction',
-                loadChildren: './modules/transaction/transaction.module#TransactionModule'
-            },
-            {
-                path: 'expense',
-                loadChildren: './modules/expense/expense.module#ExpenseModule'
-            },
-            {
-                path: 'branch',
-                loadChildren: './modules/branch/branch.module#BranchModule'
-            },
-            {
                 path: 'dashboard',
                 loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
             },
@@ -63,6 +47,10 @@ export const MainRoutes: Routes = [
             {
                 path: 'pos',
                 loadChildren: './modules/pos/pos.module#PosModule'
+            },
+            {
+                path: 'accounts',
+                loadChildren: './modules/accounts/accounts.module#AccountsModule'
             }
         ]
     }

@@ -112,15 +112,15 @@ export class SideNavComponent implements OnInit {
         },
         {
           routeName: 'Transaction',
-          route: ['/','admin','transaction','transactionList']
+          route: ['/','admin','accounts','accountList','transactions']
         },
         {
           routeName: 'Expense',
-          route: ['/','admin','expense','expenseList']
+          route: ['/','admin','accounts','accountList']
         },
         {
           routeName: 'Profit and Loss',
-          route: ['/','admin','transaction','transactionList']
+          route: ['/','admin','accounts','accountList','transactions']
         },
       ]
     },
@@ -147,13 +147,13 @@ export class SideNavComponent implements OnInit {
           routeName: 'General Settings'
         },
         {
-          route: ['/','admin','people','peopleType','user'],
+          route: ['/','admin','settings','generalSettings','user'],
           routeName: 'User'
         },
         {
           icon: faIndustry,
           routeName: 'Branch',
-          route: ['/','admin','branch','branchList']
+          route: ['/','admin','settings','generalSettings','branch']
         },
       ]
     }

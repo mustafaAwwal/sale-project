@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,6 +9,8 @@ import { faPrint } from '@fortawesome/free-solid-svg-icons';
 })
 export class TransactionTableComponent implements OnInit {
   @Input() incomingData: any;
+  @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort,{static: true}) sort: MatSort;
   dataSource: MatTableDataSource<any>;
   columnsToDisplay = ['date','transactionNo','invoiceNo','name','amount','note','type','actions']
   iconPack = {
@@ -17,12 +19,17 @@ export class TransactionTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.incomingData)
+    this.dataSource = new MatTableDataSource(this.incomingData);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort      = this.sort;
   }
   editHandler(row) {
 
   }
   detailHandler(row) {
     
+  }
+  searchFilter(searchText: String) {
+    this.dataSource.filter = searchText.trim().toLowerCase();
   }
 }

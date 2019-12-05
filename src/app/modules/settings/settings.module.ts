@@ -12,11 +12,16 @@ import { FormHeadingComponent } from './components/form-heading/form-heading.com
 import { VatTableComponent } from './components/vat-table/vat-table.component';
 import { RoleTableComponent } from './components/role-table/role-table.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserTableComponent } from './components/user-table/user-table.component';
+import { UserComponent } from './pages/user/user.component';
+import { UserFormComponent } from './pages/user-form/user-form.component';
+import { BranchListComponent } from './pages/branch-list/branch-list.component';
+import { BranchTableComponent } from './components/branch-table/branch-table.component';
 
 
 
 @NgModule({
-  declarations: [GeneralSettingsComponent, RoleComponent, VatComponent, FormHeadingComponent, VatTableComponent, RoleTableComponent],
+  declarations: [GeneralSettingsComponent, RoleComponent, VatComponent, FormHeadingComponent, VatTableComponent, RoleTableComponent,UserTableComponent,UserComponent,UserFormComponent,BranchListComponent,BranchTableComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(SettingsRoutes),

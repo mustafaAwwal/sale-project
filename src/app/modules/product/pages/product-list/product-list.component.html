@@ -4,4 +4,4 @@
             <button mat-raised-button color="primary" [routerLink]='["newProduct"]'> <fa-icon [icon]="iconPack.plus"></fa-icon> Create New Product</button>
         </div>
     </div>
-<app-product-table></app-product-table>
+<app-product-table [incomingData]='productList'></app-product-table>

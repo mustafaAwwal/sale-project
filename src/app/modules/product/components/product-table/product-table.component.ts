@@ -1,12 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTable, MatTableDataSource } from '@angular/material';
-export const productList = [
-  {
-    id: '1',
-    name: 'united(UN1007)',
-    inStock: -16
-  }
-]
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+
 @Component({
   selector: 'app-product-table',
   templateUrl: './product-table.component.html',
@@ -14,14 +8,24 @@ export const productList = [
 })
 export class ProductTableComponent implements OnInit {
   columnsToDisplay: String[] = ['id','name','inStock','Actions']
-  productListData = new MatTableDataSource(productList)
+  @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator
+  @ViewChild(MatSort,{static:true}) sort: MatSort;
+  @Input() incomingData: any;
+  dataSource: any;
   constructor() { }
+  ngOnInit() {
+    this.dataSource = new MatTableDataSource(this.incomingData);
+    this.dataSource.paginator = this.paginator
+    this.dataSource.sort      = this.sort
+  
+  }
   editHandler(row) {
 
   }
   detailHandler(row) {
 
   }
-  ngOnInit() {
+  searchFilter(searchFilter) {
+    this.dataSource.filter = searchFilter
   }
 }

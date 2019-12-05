@@ -10,6 +10,13 @@ export class ProductListComponent implements OnInit {
   iconPack = {
     plus: faPlus
   }
+  productList = [
+    {
+      id: 1,
+      name: 'Bike',
+      inStock: 'yes',
+    }
+  ]
   constructor() { }
 
   ngOnInit() {

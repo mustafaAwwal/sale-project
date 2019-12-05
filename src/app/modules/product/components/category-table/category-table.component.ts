@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-category-table',
@@ -9,6 +9,8 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class CategoryTableComponent implements OnInit {
   @Input() incomingData: any;
+  @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator
+  @ViewChild(MatSort,{static:true}) sort: MatSort;
   dataSource: any;
   columnsToDisplay = ['id','name','subCategory','actions']
   iconPack = {
@@ -19,10 +21,14 @@ export class CategoryTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.incomingData);
-
+    this.dataSource.paginator = this.paginator
+    this.dataSource.sort      = this.sort
   }
   editHandler(row) {
   }
   deleteHandler(row) {
+  }
+  searchFilter(filterText:String) {
+    this.dataSource.filter = filterText.trim().toLowerCase()
   }
 }

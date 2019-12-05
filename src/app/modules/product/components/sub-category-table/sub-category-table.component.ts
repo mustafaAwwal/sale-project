@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,6 +9,8 @@ import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 })
 export class SubCategoryTableComponent implements OnInit {
   @Input() incomingData: any;
+  @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
+  @ViewChild(MatSort,{static:true}) sort: MatSort;
   dataSource: MatTableDataSource<any>;
   iconPack = {
     edit: faEdit,
@@ -19,9 +21,14 @@ export class SubCategoryTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.incomingData)
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort      = this.sort;
   }
   editHandler(row) {
   }
   deleteHandler(row) {
+  }
+  searchFilter(searchText) {
+    this.dataSource.filter = searchText
   }
 }
