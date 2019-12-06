@@ -1,3 +1,6 @@
+.main-heading {
+    text-align: center;
+}
 .container {
     height: 100vh;
     position: fixed;
@@ -13,6 +16,8 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    overflow: scroll;
+
 }
 .gutter-area {
     flex: 1 1 auto;

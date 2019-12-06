@@ -1,1 +1,8 @@
-<p>home works!</p>
+<h1 class="main-heading">
+    Dashboard
+</h1>
+<div class="stat-grid">
+    <div class='stat' *ngFor= 'let card of statCards'>
+        <app-stat-card [statCardData]='card'></app-stat-card>
+    </div>
+</div>

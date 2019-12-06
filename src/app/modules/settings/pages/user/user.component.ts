@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
     {
       id: '2',
       name: 'Super User',
-      email: 'info@nerdwaretech.com',
+      email: 'info@vos.com',
       role: 'Super User'
     }
   ]
