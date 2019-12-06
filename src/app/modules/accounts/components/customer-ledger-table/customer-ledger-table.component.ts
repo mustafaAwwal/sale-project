@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { CustomerLedgerFormComponent } from '../customer-ledger-form/customer-ledger-form.component';
 
 @Component({
   selector: 'app-customer-ledger-table',
@@ -11,6 +12,7 @@ export class CustomerLedgerTableComponent implements OnInit {
   @Input() incomingData: any;
   @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator;
   @ViewChild(MatSort,{static: true}) sort: MatSort;
+  @ViewChild(CustomerLedgerFormComponent,{static:true}) form:CustomerLedgerFormComponent;
   dataSource: any;
   constructor() { }
 
@@ -21,5 +23,9 @@ export class CustomerLedgerTableComponent implements OnInit {
   }
   searchFilterText(searchText: String) {
     this.dataSource.filter = searchText.trim().toLowerCase()
+  }
+  openForm(row) {
+    this.form.visibleStateToggler()
+    this.form.formFiller(row)
   }
 }

@@ -14,6 +14,9 @@ import { CustomerLedgerComponent } from './pages/customer-ledger/customer-ledger
 import { SupplierLedgerComponent } from './pages/supplier-ledger/supplier-ledger.component';
 import { CustomerLedgerTableComponent } from './components/customer-ledger-table/customer-ledger-table.component';
 import { SupplierLedgerTableComponent } from './components/supplier-ledger-table/supplier-ledger-table.component';
+import { CustomerLedgerFormComponent } from './components/customer-ledger-form/customer-ledger-form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SupplierLedgerFormComponent } from './components/supplier-ledger-form/supplier-ledger-form.component';
 
 
 
@@ -26,7 +29,9 @@ import { SupplierLedgerTableComponent } from './components/supplier-ledger-table
     CustomerLedgerComponent,
     SupplierLedgerComponent,
     CustomerLedgerTableComponent,
-    SupplierLedgerTableComponent
+    SupplierLedgerTableComponent,
+    CustomerLedgerFormComponent,
+    SupplierLedgerFormComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +39,9 @@ import { SupplierLedgerTableComponent } from './components/supplier-ledger-table
     CommonPipeModule,
     RouterModule.forChild(AccountsRoutes),
     FontAwesomeModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AccountsModule { }

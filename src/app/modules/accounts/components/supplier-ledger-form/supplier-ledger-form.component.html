@@ -1,0 +1,34 @@
+<div class="container" [ngClass]='visibleState ? "show":"hidden"'>
+    <div class="content-area">
+        <div class="form-wrapper">
+            <div class="icon-wrapper">
+                <fa-icon [icon]='iconPack.cross' (click)='visibleStateToggler()'></fa-icon>
+            </div>
+            <form action="" [formGroup]='ledgerForm'>
+                <div class="field-wrapper">
+                    <mat-form-field><input type="text" readonly matInput placeholder="Date" formControlName='date'></mat-form-field>
+                </div>
+                <div class="field-wrapper">
+                    <mat-form-field><input type="text" readonly matInput placeholder="Branch" formControlName='branch'></mat-form-field>
+                </div>
+                <div class="field-wrapper">
+                    <mat-form-field><input type="text" readonly matInput placeholder="Supplier" formControlName='supplier'></mat-form-field>
+                </div>
+                <div class="field-wrapper">
+                    <mat-form-field><input type="text" readonly matInput placeholder="Name" formControlName='name'></mat-form-field>
+                </div>
+                <div class="field-wrapper">
+                    <mat-form-field><input type="text" readonly matInput placeholder="Address" formControlName='address'></mat-form-field>
+                </div>
+                <div class="field-wrapper">
+                    <mat-form-field><input type="text" readonly matInput placeholder="Phone" formControlName='phone'></mat-form-field>
+                </div>
+                <div class="field-wrapper">
+                    <mat-form-field><input type="number"  matInput placeholder="Amount" formControlName='amount'></mat-form-field>
+                </div>
+                <div class="field-wrapper button-wrapper"><button mat-raised-button color='accent' type='submit'>Save</button></div>
+            </form>
+        </div>
+    </div>
+    <div class="gutter-area" (click)='visibleStateToggler()'></div>
+</div>

@@ -1,0 +1,78 @@
+.container {
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.content-area {
+    flex: 0 1 70%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    overflow: scroll;
+}
+.gutter-area {
+    flex: 1 1 auto;
+}
+form {
+    padding: 20px 100px;
+    mat-form-field {
+        width: 100%;
+    }
+    .button-wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        button {
+            border-radius: 30px;
+        }
+    }
+}
+.hidden {
+    width: 0px;
+    transition: 400ms;
+    .content-area,.gutter-area {
+        width: 0px;
+        .form-wrapper {
+            display: none;
+        }
+    }
+}
+.show {
+    width: 100%;
+    transition: 400ms;
+    .content-area,.gutter-area {
+        display: flex;
+        .form-wrapper {
+            display: initial;
+        }
+    }
+    .gutter-area {
+        animation: fade;
+        animation-duration: 300ms;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+    }
+}
+.icon-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    padding: 10px 100px;
+    fa-icon {
+        cursor: pointer;
+    }
+}
+@keyframes fade{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.363);
+
+    }
+}
