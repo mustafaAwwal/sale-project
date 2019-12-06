@@ -100,11 +100,11 @@ export class SideNavComponent implements OnInit {
       routes: [
         {
           routeName: 'Customer Ledger',
-          route: ['/','admin','transaction','transactionList']
+          route: ['/','admin','accounts','accountList','customerLedger']
         },
         {
           routeName: 'Supplier Ledger',
-          route: ['/','admin','transaction','transactionList']
+          route: ['/','admin','accounts','accountList','supplierLedger']
         },
         {
           routeName: 'Voucher',

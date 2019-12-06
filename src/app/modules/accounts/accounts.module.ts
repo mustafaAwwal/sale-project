@@ -10,6 +10,10 @@ import { RouterModule } from '@angular/router';
 import { AccountsRoutes } from './accounts.routes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedComponentsModule } from 'src/app/shared/modules/shared-components/shared-components.module';
+import { CustomerLedgerComponent } from './pages/customer-ledger/customer-ledger.component';
+import { SupplierLedgerComponent } from './pages/supplier-ledger/supplier-ledger.component';
+import { CustomerLedgerTableComponent } from './components/customer-ledger-table/customer-ledger-table.component';
+import { SupplierLedgerTableComponent } from './components/supplier-ledger-table/supplier-ledger-table.component';
 
 
 
@@ -18,7 +22,11 @@ import { SharedComponentsModule } from 'src/app/shared/modules/shared-components
     ExpenseListComponent,
     ExpenseTableComponent,
     TransactionListComponent,
-    TransactionTableComponent
+    TransactionTableComponent,
+    CustomerLedgerComponent,
+    SupplierLedgerComponent,
+    CustomerLedgerTableComponent,
+    SupplierLedgerTableComponent
   ],
   imports: [
     CommonModule,
